@@ -46,6 +46,6 @@ GitHub Actions provides two reproducibility checks:
 
 The scheduled workflow reproduces the fixed 2018–2024 research sample; it does not silently extend the historical study period. The Week 8 application has a separate public-data refresh path for current JPM, Cboe VIX, and FRED DGS1 inputs.
 
-## Reports and presentation
+## Reports
 
-Each `WeekN Report` folder contains the weekly, learning, and understanding reports. Week 4 also includes validation and performance documentation; Week 6 includes the model-performance report; Week 8 includes the final project report and presentation.
+The `Reports` directory contains six PDF documents: the data specification, model validation, performance benchmark documentation, model performance report, final project report, and project closure report.

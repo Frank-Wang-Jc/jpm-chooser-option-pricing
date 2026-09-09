@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-import zipfile
+import subprocess
 from pathlib import Path
 
 
@@ -38,31 +38,40 @@ required_files = [
     ROOT / "Week 6" / "trained_models" / "best_direct_pricing_model.pkl",
     ROOT / "Week 7" / "app.py",
     ROOT / "Week 8" / "pricing_tool" / "app.py",
-    ROOT / "Reports" / "Week8 Report" / "Final Project Report.docx",
-    ROOT / "Reports" / "Week8 Report" / "Final Presentation.pptx",
 ]
+report_paths = [
+    "Reports/Project Closure Report.pdf",
+    "Reports/Week1 Report/Data Specification Document.pdf",
+    "Reports/Week4 Report/Model Validation Report.pdf",
+    "Reports/Week4 Report/Performance Benchmark Documentation.pdf",
+    "Reports/Week6 Report/Model Performance Report.pdf",
+    "Reports/Week8 Report/Final Project Report.pdf",
+]
+required_files.extend(ROOT / path for path in report_paths)
 for path in required_files:
     if not path.is_file() or path.stat().st_size == 0:
         raise AssertionError(f"Missing or empty deliverable: {path.relative_to(ROOT)}")
 
-for path in required_files[-2:]:
-    with zipfile.ZipFile(path) as archive:
-        broken = archive.testzip()
-        if broken:
-            raise AssertionError(f"Corrupt Office package {path.name}: {broken}")
+for relative_path in report_paths:
+    path = ROOT / relative_path
+    content = path.read_bytes()
+    if not content.startswith(b"%PDF-") or b"%%EOF" not in content[-4096:]:
+        raise AssertionError(f"Invalid or incomplete PDF: {relative_path}")
 
-pptx = required_files[-1]
-with zipfile.ZipFile(pptx) as archive:
-    names = archive.namelist()
-slides = [name for name in names if name.startswith("ppt/slides/slide") and name.endswith(".xml")]
-notes = [name for name in names if name.startswith("ppt/notesSlides/notesSlide") and name.endswith(".xml")]
-if len(slides) != 12 or len(notes) != 12:
-    raise AssertionError(f"Expected 12 slides and notes; found {len(slides)} slides and {len(notes)} notes")
+# Inspect the index so local-only documents do not affect this publication check.
+tracked_reports = set(subprocess.check_output(
+    ["git", "ls-files", "-z", "--", "Reports"], cwd=ROOT,
+).decode("utf-8").rstrip("\0").split("\0"))
+if tracked_reports != set(report_paths):
+    raise AssertionError(
+        f"Report publication mismatch: extra={sorted(tracked_reports - set(report_paths))}; "
+        f"missing={sorted(set(report_paths) - tracked_reports)}"
+    )
 
 print({
     "status": "PASS",
     "notebooks": len(notebooks),
     "code_cells": code_cells,
     "required_deliverables": len(required_files),
-    "presentation_slides": len(slides),
+    "published_pdf_reports": len(report_paths),
 })
