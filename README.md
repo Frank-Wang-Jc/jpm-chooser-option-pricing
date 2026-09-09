@@ -48,4 +48,4 @@ The scheduled workflow reproduces the fixed 2018–2024 research sample; it does
 
 ## Reports
 
-The `Reports` directory contains six PDF documents: the data specification, model validation, performance benchmark documentation, model performance report, final project report, and project closure report.
+The `Reports` directory contains 14 PDF documents: weekly reports for Weeks 1–8, the data specification, model validation, performance benchmark documentation, model performance report, final project report, and project closure report.

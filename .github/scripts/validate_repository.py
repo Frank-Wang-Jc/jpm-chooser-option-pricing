@@ -47,6 +47,10 @@ report_paths = [
     "Reports/Week6 Report/Model Performance Report.pdf",
     "Reports/Week8 Report/Final Project Report.pdf",
 ]
+report_paths.extend(
+    f"Reports/Week{week} Report/Week {week} Weekly Report.pdf"
+    for week in range(1, 9)
+)
 required_files.extend(ROOT / path for path in report_paths)
 for path in required_files:
     if not path.is_file() or path.stat().st_size == 0:
