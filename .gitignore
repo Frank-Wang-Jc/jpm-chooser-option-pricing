@@ -8,13 +8,6 @@ Thumbs.db
 .DS_Store
 ~$*.docx
 
-# Local archives and duplicated submission bundles
+# Local archives
 /*.zip
 /*.rar
-
-# Licensed or internal reference material; keep locally, not in GitHub
-/Options, Futures, and Other Derivatives*.pdf
-/Quantitative Research & Trading - Advanced Chooser Option Pricing Model.pdf
-/Project Understanding & 8-week plan·.docx
-/大纲.docx
-/Week0/
