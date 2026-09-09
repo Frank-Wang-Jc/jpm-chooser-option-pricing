@@ -1,0 +1,22 @@
+{
+  "Close": {
+    "min": 66.46389770507812,
+    "max": 152.49319458007812
+  },
+  "Treasury_Rate_Decimal": {
+    "min": 0.0052,
+    "max": 0.0498
+  },
+  "Rolling_Volatility_20D": {
+    "min": 0.0744401940490293,
+    "max": 1.364336289740909
+  },
+  "VIX_Close": {
+    "min": 10.850000381469728,
+    "max": 82.69000244140625
+  },
+  "fit_rows": 1388,
+  "fit_start": "2018-03-29",
+  "fit_end": "2023-10-31",
+  "note": "Ranges use only rows included in final model fitting; flags indicate extrapolation risk, not automatic rejection."
+}

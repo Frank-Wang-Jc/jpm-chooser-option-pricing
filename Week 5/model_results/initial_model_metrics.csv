@@ -1,0 +1,13 @@
+Approach,Model,Target,MAE,RMSE,R2
+1 - ML volatility + BSM,Random Forest,Chooser proxy price,4.357910179533161,5.372266351387544,0.4983255074587898
+2 - Direct proxy pricing,Linear Regression,Chooser proxy price,3.5734500272910483,5.483654571867131,0.47730646709430524
+1 - ML volatility + BSM,Histogram GBDT,Chooser proxy price,4.265419986523748,5.499832167712743,0.474217870709279
+1 - ML volatility + BSM,Linear Regression,Chooser proxy price,4.003221167981349,5.815107594240824,0.412209643478483
+1 - ML volatility + BSM,Neural Network,Chooser proxy price,6.502841518044099,9.139376253951207,-0.4519112190551371
+2 - Direct proxy pricing,Histogram GBDT,Chooser proxy price,9.028737413684759,9.86907754901993,-0.6930121325959264
+2 - Direct proxy pricing,Random Forest,Chooser proxy price,9.09056551937586,10.169061809175469,-0.7974992644946926
+2 - Direct proxy pricing,Neural Network,Chooser proxy price,23.9686427967718,27.73133102688954,-12.367444118922593
+1 - ML volatility + BSM,Random Forest,Forward volatility,0.0619543920990513,0.07439219732798139,-0.0401506080539078
+1 - ML volatility + BSM,Histogram GBDT,Forward volatility,0.06015016916774453,0.07466287361977755,-0.047733562161541565
+1 - ML volatility + BSM,Linear Regression,Forward volatility,0.0569440359441611,0.0780041544556254,-0.14360730563035373
+1 - ML volatility + BSM,Neural Network,Forward volatility,0.0908562641790519,0.1190552531937513,-1.6640267408459488

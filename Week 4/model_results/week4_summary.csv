@@ -1,0 +1,6 @@
+Area,Result,Interpretation
+Week 3 regression,max difference 0.000e+00,Vectorized model preserves Week 3 formula
+Historical chooser series,"1,740 observations","Uses Week 2 spot, Treasury rate, volatility, and VIX"
+Proxy error,MAE 3.7757; RMSE 8.3567,"Ex-post forward-volatility proxy, not transaction error"
+Market sanity check,36 listed vanilla quotes,Cboe delayed midpoints; not chooser transactions
+Complexity,O(n) time and O(n) vector memory,Vectorized pricing supports scalable downstream ML

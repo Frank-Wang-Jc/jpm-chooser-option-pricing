@@ -1,0 +1,39 @@
+{
+  "contract": {
+    "strike": 150.0,
+    "choice_time_years": 0.5,
+    "maturity_years": 1.0
+  },
+  "dividend_yield": {
+    "value": 0.0233,
+    "source": "Week 3 paper configuration; Week 2 does not include dividend yield"
+  },
+  "week2_inputs": {
+    "file": "Week2/processed_data/market_data_processed.csv",
+    "risk_free_column": "Treasury_Rate",
+    "risk_free_unit": "percent; divide by 100",
+    "volatility_column": "Rolling_Volatility_20D",
+    "spot_column": "Close",
+    "regime_column": "VIX_Close"
+  },
+  "regimes": {
+    "low_vix_upper": 15.0,
+    "high_vix_lower": 25.0
+  },
+  "forward_realized_volatility": {
+    "window_trading_days": 20,
+    "annualization_days": 252
+  },
+  "market_snapshot": {
+    "quote_date": "2026-09-04",
+    "source": "https://www.cboe.com/delayed_quotes/JPM/quote_table/",
+    "source_type": "Cboe delayed listed-equity option quotes; not chooser transactions",
+    "underlying_bid": 358.6,
+    "underlying_ask": 358.96,
+    "underlying_last": 358.64,
+    "risk_free_rate": 0.0411,
+    "risk_free_source": "https://fred.stlouisfed.org/series/DGS1",
+    "risk_free_observation_date": "2026-09-03",
+    "week2_frozen_volatility": 0.1906247800741619
+  }
+}

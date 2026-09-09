@@ -1,0 +1,1399 @@
+{
+  "status": "PASS",
+  "check_count": 259,
+  "failed_count": 0,
+  "python_files": 14,
+  "notebooks": 9,
+  "code_cells": 100,
+  "checks": [
+    {
+      "check": "Python AST parse",
+      "passed": true,
+      "detail": "14 files"
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:2",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "check": "No error output api_setup.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:3",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "check": "No error output api_setup.ipynb:3",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:5",
+      "passed": true,
+      "detail": 17
+    },
+    {
+      "check": "No error output api_setup.ipynb:5",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:6",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "check": "No error output api_setup.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:9",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "check": "No error output api_setup.ipynb:9",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:11",
+      "passed": true,
+      "detail": 20
+    },
+    {
+      "check": "No error output api_setup.ipynb:11",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell api_setup.ipynb:13",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "check": "No error output api_setup.ipynb:13",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:2",
+      "passed": true,
+      "detail": 187
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:4",
+      "passed": true,
+      "detail": 188
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:6",
+      "passed": true,
+      "detail": 189
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:7",
+      "passed": true,
+      "detail": 190
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:7",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:8",
+      "passed": true,
+      "detail": 191
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:9",
+      "passed": true,
+      "detail": 192
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:9",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:11",
+      "passed": true,
+      "detail": 193
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:11",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:12",
+      "passed": true,
+      "detail": 194
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:14",
+      "passed": true,
+      "detail": 195
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:15",
+      "passed": true,
+      "detail": 196
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:15",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:16",
+      "passed": true,
+      "detail": 197
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:16",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:18",
+      "passed": true,
+      "detail": 198
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:18",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:19",
+      "passed": true,
+      "detail": 199
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:19",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:21",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:21",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:22",
+      "passed": true,
+      "detail": 201
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:22",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:23",
+      "passed": true,
+      "detail": 202
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:23",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:24",
+      "passed": true,
+      "detail": 203
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:24",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:25",
+      "passed": true,
+      "detail": 204
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:25",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:26",
+      "passed": true,
+      "detail": 205
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:26",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:27",
+      "passed": true,
+      "detail": 206
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:27",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:29",
+      "passed": true,
+      "detail": 207
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:29",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:30",
+      "passed": true,
+      "detail": 208
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:30",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:32",
+      "passed": true,
+      "detail": 209
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:32",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:33",
+      "passed": true,
+      "detail": 210
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:33",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:34",
+      "passed": true,
+      "detail": 211
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:34",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:35",
+      "passed": true,
+      "detail": 212
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:35",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:36",
+      "passed": true,
+      "detail": 213
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:36",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:38",
+      "passed": true,
+      "detail": 214
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:38",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:40",
+      "passed": true,
+      "detail": 215
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:40",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:43",
+      "passed": true,
+      "detail": 216
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:43",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:44",
+      "passed": true,
+      "detail": 222
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:44",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:45",
+      "passed": true,
+      "detail": 223
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:45",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:46",
+      "passed": true,
+      "detail": 224
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:46",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:47",
+      "passed": true,
+      "detail": 225
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:47",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:48",
+      "passed": true,
+      "detail": 226
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:48",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:49",
+      "passed": true,
+      "detail": 232
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:49",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell feature_engineering.ipynb:50",
+      "passed": true,
+      "detail": 229
+    },
+    {
+      "check": "No error output feature_engineering.ipynb:50",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week3.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week3.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week3.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week3.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week3.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week3.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:14",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week3.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:16",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "No error output Week3.ipynb:16",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:17",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "check": "No error output Week3.ipynb:17",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3.ipynb:19",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "No error output Week3.ipynb:19",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:7",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:7",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:9",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:9",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:11",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:11",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week3_model_validation.ipynb:12",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week3_model_validation.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:14",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:16",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:16",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:18",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:18",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week4_Baseline_Evaluation.ipynb:20",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "No error output Week4_Baseline_Evaluation.ipynb:20",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week5_ML_Design_Implementation.ipynb:14",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week5_ML_Design_Implementation.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:14",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:16",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:16",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week6_Model_Training_Comparison.ipynb:18",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "check": "No error output Week6_Model_Training_Comparison.ipynb:18",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week7_Advanced_Analysis.ipynb:14",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "check": "No error output Week7_Advanced_Analysis.ipynb:14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:2",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:4",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:6",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:8",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:10",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Executed cell Week8_Final_Integration_and_Validation.ipynb:12",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "check": "No error output Week8_Final_Integration_and_Validation.ipynb:12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "Notebook inventory",
+      "passed": true,
+      "detail": [
+        "api_setup.ipynb",
+        "feature_engineering.ipynb",
+        "Week3.ipynb",
+        "Week3_model_validation.ipynb",
+        "Week4_Baseline_Evaluation.ipynb",
+        "Week5_ML_Design_Implementation.ipynb",
+        "Week6_Model_Training_Comparison.ipynb",
+        "Week7_Advanced_Analysis.ipynb",
+        "Week8_Final_Integration_and_Validation.ipynb"
+      ]
+    },
+    {
+      "check": "Notebook code compilation",
+      "passed": true,
+      "detail": "100 code cells"
+    },
+    {
+      "check": "Accurately named Alpha compact snapshot",
+      "passed": true,
+      "detail": "G:\\JPM-Chooser Option Pricing\\Week1\\raw_data\\JPM_AlphaVantage_compact_2026.csv"
+    },
+    {
+      "check": "Alpha compact row count",
+      "passed": true,
+      "detail": 100
+    },
+    {
+      "check": "Alpha snapshot labelled by actual year",
+      "passed": true,
+      "detail": [
+        "2026-03-04",
+        "2026-07-27"
+      ]
+    },
+    {
+      "check": "No obsolete Alpha filename reference",
+      "passed": true,
+      "detail": "Week 2 path"
+    },
+    {
+      "check": "Week 2 processed rows",
+      "passed": true,
+      "detail": 1760
+    },
+    {
+      "check": "Week 2 processed date range",
+      "passed": true,
+      "detail": [
+        "2018-01-02",
+        "2024-12-30"
+      ]
+    },
+    {
+      "check": "Split counts",
+      "passed": true,
+      "detail": {
+        "train": 1156,
+        "test": 252,
+        "validation": 232,
+        "purged_train_validation": 20,
+        "purged_validation_test": 20
+      }
+    },
+    {
+      "check": "Train labels precede validation",
+      "passed": true,
+      "detail": [
+        "2022-11-28",
+        "2022-11-29"
+      ]
+    },
+    {
+      "check": "Validation labels precede test",
+      "passed": true,
+      "detail": [
+        "2023-11-29",
+        "2023-11-30"
+      ]
+    },
+    {
+      "check": "CV fold 1 label boundary",
+      "passed": true,
+      "detail": [
+        "2019-03-01",
+        "2019-03-04"
+      ]
+    },
+    {
+      "check": "CV fold 2 label boundary",
+      "passed": true,
+      "detail": [
+        "2020-01-30",
+        "2020-01-31"
+      ]
+    },
+    {
+      "check": "CV fold 3 label boundary",
+      "passed": true,
+      "detail": [
+        "2020-12-29",
+        "2020-12-30"
+      ]
+    },
+    {
+      "check": "CV fold 4 label boundary",
+      "passed": true,
+      "detail": [
+        "2021-11-29",
+        "2021-11-30"
+      ]
+    },
+    {
+      "check": "Validation selects volatility model",
+      "passed": true,
+      "detail": {
+        "Direct chooser proxy price": "Linear Regression",
+        "Forward volatility": "Random Forest"
+      }
+    },
+    {
+      "check": "Validation selects direct model",
+      "passed": true,
+      "detail": {
+        "Direct chooser proxy price": "Linear Regression",
+        "Forward volatility": "Random Forest"
+      }
+    },
+    {
+      "check": "Metric Approach 1 N",
+      "passed": true,
+      "detail": 252
+    },
+    {
+      "check": "Metric Approach 1 MAE",
+      "passed": true,
+      "detail": 3.1383675959737425
+    },
+    {
+      "check": "Metric Approach 1 RMSE",
+      "passed": true,
+      "detail": 4.320338550807385
+    },
+    {
+      "check": "Metric Approach 1 R2",
+      "passed": true,
+      "detail": 0.9574877769428217
+    },
+    {
+      "check": "Metric Approach 1 Mean_Error",
+      "passed": true,
+      "detail": -1.2781284325671833
+    },
+    {
+      "check": "Metric Week 4 BSM baseline N",
+      "passed": true,
+      "detail": 252
+    },
+    {
+      "check": "Metric Week 4 BSM baseline MAE",
+      "passed": true,
+      "detail": 3.5697770181411235
+    },
+    {
+      "check": "Metric Week 4 BSM baseline RMSE",
+      "passed": true,
+      "detail": 4.870567432473994
+    },
+    {
+      "check": "Metric Week 4 BSM baseline R2",
+      "passed": true,
+      "detail": 0.945969700367933
+    },
+    {
+      "check": "Metric Week 4 BSM baseline Mean_Error",
+      "passed": true,
+      "detail": -0.5299036687429909
+    },
+    {
+      "check": "Metric Approach 2 N",
+      "passed": true,
+      "detail": 252
+    },
+    {
+      "check": "Metric Approach 2 MAE",
+      "passed": true,
+      "detail": 45.0274593640725
+    },
+    {
+      "check": "Metric Approach 2 RMSE",
+      "passed": true,
+      "detail": 49.9890896041052
+    },
+    {
+      "check": "Metric Approach 2 R2",
+      "passed": true,
+      "detail": -4.691525815019749
+    },
+    {
+      "check": "Metric Approach 2 Mean_Error",
+      "passed": true,
+      "detail": -45.02257906032778
+    },
+    {
+      "check": "Selected route beats BSM",
+      "passed": true,
+      "detail": {
+        "Approach 1": 4.320338550807385,
+        "Week 4 BSM baseline": 4.870567432473994,
+        "Approach 2": 49.9890896041052
+      }
+    },
+    {
+      "check": "Domain fit row count",
+      "passed": true,
+      "detail": 1388
+    },
+    {
+      "check": "Domain minimum Close",
+      "passed": true,
+      "detail": {
+        "min": 66.46389770507812,
+        "max": 152.49319458007812
+      }
+    },
+    {
+      "check": "Domain maximum Close",
+      "passed": true,
+      "detail": {
+        "min": 66.46389770507812,
+        "max": 152.49319458007812
+      }
+    },
+    {
+      "check": "Domain minimum Treasury_Rate_Decimal",
+      "passed": true,
+      "detail": {
+        "min": 0.0052,
+        "max": 0.0498
+      }
+    },
+    {
+      "check": "Domain maximum Treasury_Rate_Decimal",
+      "passed": true,
+      "detail": {
+        "min": 0.0052,
+        "max": 0.0498
+      }
+    },
+    {
+      "check": "Domain minimum Rolling_Volatility_20D",
+      "passed": true,
+      "detail": {
+        "min": 0.0744401940490293,
+        "max": 1.364336289740909
+      }
+    },
+    {
+      "check": "Domain maximum Rolling_Volatility_20D",
+      "passed": true,
+      "detail": {
+        "min": 0.0744401940490293,
+        "max": 1.364336289740909
+      }
+    },
+    {
+      "check": "Domain minimum VIX_Close",
+      "passed": true,
+      "detail": {
+        "min": 10.850000381469728,
+        "max": 82.69000244140625
+      }
+    },
+    {
+      "check": "Domain maximum VIX_Close",
+      "passed": true,
+      "detail": {
+        "min": 10.850000381469728,
+        "max": 82.69000244140625
+      }
+    },
+    {
+      "check": "Stored OOF residual arithmetic",
+      "passed": true,
+      "detail": 1.4210854715202004e-14
+    },
+    {
+      "check": "OOF calibration row count",
+      "passed": true,
+      "detail": 924
+    },
+    {
+      "check": "OOF lower quantile",
+      "passed": true,
+      "detail": -31.178108061896054
+    },
+    {
+      "check": "OOF upper quantile",
+      "passed": true,
+      "detail": 11.696336789048353
+    },
+    {
+      "check": "Held-out interval coverage",
+      "passed": true,
+      "detail": 0.996031746031746
+    },
+    {
+      "check": "Volatility shock direction",
+      "passed": true,
+      "detail": {
+        "Base": 99.26166793787364,
+        "50% Volatility Spike": 115.66831713156115,
+        "2% Rate Hike": 101.3316591197473,
+        "Combined Shock": 116.91772232012458
+      }
+    },
+    {
+      "check": "Rate shock direction",
+      "passed": true,
+      "detail": {
+        "Base": 99.26166793787364,
+        "50% Volatility Spike": 115.66831713156115,
+        "2% Rate Hike": 101.3316591197473,
+        "Combined Shock": 116.91772232012458
+      }
+    },
+    {
+      "check": "App finite BSM",
+      "passed": true,
+      "detail": 82.5747718734063
+    },
+    {
+      "check": "App finite selected ML",
+      "passed": true,
+      "detail": 82.43419451129053
+    },
+    {
+      "check": "App selects Approach 1",
+      "passed": true,
+      "detail": "Approach 1 - Random Forest volatility forecast plus BSM"
+    },
+    {
+      "check": "App interval ordered",
+      "passed": true,
+      "detail": [
+        51.25608644939447,
+        94.13053130033887
+      ]
+    },
+    {
+      "check": "App exposes direct benchmark",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "App flags spot OOD",
+      "passed": true,
+      "detail": {
+        "Close": 231.07756
+      }
+    },
+    {
+      "check": "Greek unit labels",
+      "passed": true,
+      "detail": {
+        "delta": 0.9677859459144751,
+        "gamma": 0.0005619293561176657,
+        "vega_per_1pct": 0.05700836024971068,
+        "rho_per_1pct": 1.4106581910809268
+      }
+    },
+    {
+      "check": "ML disabled off trained contract",
+      "passed": true,
+      "detail": "ML models are restricted to the trained K=150, q=2.33%, T1=0.5, T2=1.0 contract."
+    },
+    {
+      "check": "Invalid choice times rejected",
+      "passed": true,
+      "detail": "2/2"
+    }
+  ]
+}

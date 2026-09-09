@@ -1,0 +1,37 @@
+Approach,Target,Feature,Mean_Absolute_SHAP
+Approach 1 Random Forest,Forward volatility,VIX_Close,0.051947417213971864
+Approach 1 Random Forest,Forward volatility,Treasury_Rate_Decimal,0.03313134744494939
+Approach 1 Random Forest,Forward volatility,Rolling_Volatility_60D,0.028021981390468707
+Approach 1 Random Forest,Forward volatility,MA50_Gap,0.00811541921203469
+Approach 1 Random Forest,Forward volatility,VIX_JPM_Correlation_20D,0.005818061284167232
+Approach 1 Random Forest,Forward volatility,MA20_Gap,0.005417279337312484
+Approach 1 Random Forest,Forward volatility,Rolling_Volatility_5D,0.004034918227648734
+Approach 1 Random Forest,Forward volatility,Rolling_Volatility_20D,0.001486788871486536
+Approach 1 Random Forest,Forward volatility,Price_Momentum_20D,0.0009629424571636996
+Approach 1 Random Forest,Forward volatility,Volume_ZScore_20D,0.0008579429629142832
+Approach 1 Random Forest,Forward volatility,Intraday_Range,0.0006201646153802036
+Approach 1 Random Forest,Forward volatility,Rolling_Volatility_10D,0.0006151439343440592
+Approach 1 Random Forest,Forward volatility,Abs_Return_1D,0.0005916167503060814
+Approach 1 Random Forest,Forward volatility,VIX_Return,0.000212904217930363
+Approach 1 Random Forest,Forward volatility,Daily_Return,0.00011850683525939445
+Approach 1 Random Forest,Forward volatility,Overnight_Gap,0.00010562166043275415
+Approach 1 Random Forest,Forward volatility,Interest_Rate_Momentum,5.168738752320289e-05
+Approach 2 Linear Regression,Direct chooser proxy price,Close,10.24784487494941
+Approach 2 Linear Regression,Direct chooser proxy price,Log_Moneyness,4.698810876782823
+Approach 2 Linear Regression,Direct chooser proxy price,MA50_Gap,1.3329388993304911
+Approach 2 Linear Regression,Direct chooser proxy price,Treasury_Rate_Decimal,0.6748383646856465
+Approach 2 Linear Regression,Direct chooser proxy price,Rolling_Volatility_60D,0.6023004820815734
+Approach 2 Linear Regression,Direct chooser proxy price,VIX_Close,0.5445143975988306
+Approach 2 Linear Regression,Direct chooser proxy price,Rolling_Volatility_5D,0.4466234099896047
+Approach 2 Linear Regression,Direct chooser proxy price,Rolling_Volatility_20D,0.4183239505161759
+Approach 2 Linear Regression,Direct chooser proxy price,VIX_JPM_Correlation_20D,0.37871232616545353
+Approach 2 Linear Regression,Direct chooser proxy price,MA20_Gap,0.3272648711345613
+Approach 2 Linear Regression,Direct chooser proxy price,Rolling_Volatility_10D,0.2997117276731458
+Approach 2 Linear Regression,Direct chooser proxy price,Price_Momentum_20D,0.23613359300928594
+Approach 2 Linear Regression,Direct chooser proxy price,Abs_Return_1D,0.23034622151612602
+Approach 2 Linear Regression,Direct chooser proxy price,Interest_Rate_Momentum,0.2235410037683302
+Approach 2 Linear Regression,Direct chooser proxy price,Volume_ZScore_20D,0.17361822811889463
+Approach 2 Linear Regression,Direct chooser proxy price,VIX_Return,0.14701106935955752
+Approach 2 Linear Regression,Direct chooser proxy price,Daily_Return,0.0956994610229354
+Approach 2 Linear Regression,Direct chooser proxy price,Overnight_Gap,0.028720328142897145
+Approach 2 Linear Regression,Direct chooser proxy price,Intraday_Range,0.027013122410432508

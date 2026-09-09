@@ -1,0 +1,16 @@
+{
+  "method": "signed residual quantiles from purge-aware expanding-window out-of-fold predictions in the training block",
+  "nominal_coverage": 0.9,
+  "lower_residual_quantile": -31.178108061896054,
+  "upper_residual_quantile": 11.696336789048353,
+  "residual_standard_deviation": 15.777141995122538,
+  "calibration_rows": 924,
+  "calibration_start": "2019-03-04",
+  "calibration_end": "2022-10-28",
+  "empirical_test_coverage": 0.996031746031746,
+  "test_rows": 252,
+  "test_start": "2023-11-30",
+  "test_end": "2024-11-29",
+  "mean_interval_width": 42.874444850944414,
+  "limitation": "This is a training-block out-of-fold proxy-error band evaluated on the later test period, not a chooser market-price confidence interval."
+}

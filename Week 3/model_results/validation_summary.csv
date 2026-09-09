@@ -1,0 +1,8 @@
+Validation Test,Observed,Pass
+Put-call parity,0.0,True
+Chooser >= call,10.44092652087798,True
+Chooser >= put,13.756854843609034,True
+Chooser <= call + put,4.932142655196898,True
+Paper Table 3 choices follow the paper rule,1.0,True
+Paper Table 3 payoffs recalculate exactly,1.4210854715202004e-14,True
+Monte Carlo is within three standard errors of closed form,0.8227573969225521,True

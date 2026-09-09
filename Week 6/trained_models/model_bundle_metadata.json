@@ -1,0 +1,100 @@
+{
+  "selected_volatility_model": "Random Forest",
+  "selected_direct_pricing_model": "Linear Regression",
+  "volatility_features": [
+    "Daily_Return",
+    "Abs_Return_1D",
+    "Rolling_Volatility_5D",
+    "Rolling_Volatility_10D",
+    "Rolling_Volatility_20D",
+    "Rolling_Volatility_60D",
+    "VIX_Close",
+    "VIX_Return",
+    "VIX_JPM_Correlation_20D",
+    "Treasury_Rate_Decimal",
+    "Interest_Rate_Momentum",
+    "Price_Momentum_20D",
+    "MA20_Gap",
+    "MA50_Gap",
+    "Intraday_Range",
+    "Overnight_Gap",
+    "Volume_ZScore_20D"
+  ],
+  "pricing_features": [
+    "Daily_Return",
+    "Abs_Return_1D",
+    "Rolling_Volatility_5D",
+    "Rolling_Volatility_10D",
+    "Rolling_Volatility_20D",
+    "Rolling_Volatility_60D",
+    "VIX_Close",
+    "VIX_Return",
+    "VIX_JPM_Correlation_20D",
+    "Treasury_Rate_Decimal",
+    "Interest_Rate_Momentum",
+    "Price_Momentum_20D",
+    "MA20_Gap",
+    "MA50_Gap",
+    "Intraday_Range",
+    "Overnight_Gap",
+    "Volume_ZScore_20D",
+    "Close",
+    "Log_Moneyness"
+  ],
+  "contract": {
+    "K": 150.0,
+    "q": 0.0233,
+    "T1": 0.5,
+    "T2": 1.0
+  },
+  "test_start": "2023-11-30",
+  "test_end": "2024-11-29",
+  "fit_start": "2018-03-29",
+  "fit_end": "2023-10-31",
+  "purge_gap_trading_days": 20,
+  "target_note": "Chooser target is an ex-post forward-volatility BSM proxy, not an observed chooser transaction price.",
+  "serialized_model_artifacts": [
+    {
+      "file": "best_volatility_model.pkl",
+      "format": "pickle",
+      "purpose": "Week 6 rubric deliverable"
+    },
+    {
+      "file": "best_direct_pricing_model.pkl",
+      "format": "pickle",
+      "purpose": "Week 6 rubric deliverable"
+    },
+    {
+      "file": "best_volatility_model.joblib",
+      "format": "joblib",
+      "purpose": "Week 8 runtime"
+    },
+    {
+      "file": "best_direct_pricing_model.joblib",
+      "format": "joblib",
+      "purpose": "Week 8 runtime"
+    }
+  ],
+  "pickle_round_trip_validation": {
+    "best_volatility_model": {
+      "pickle_file": "best_volatility_model.pkl",
+      "rows_checked": 252,
+      "max_absolute_difference_vs_saved_week6_predictions": 2.498001805406602e-16,
+      "status": "passed"
+    },
+    "best_direct_pricing_model": {
+      "pickle_file": "best_direct_pricing_model.pkl",
+      "rows_checked": 252,
+      "max_absolute_difference_vs_saved_week6_predictions": 0.0,
+      "status": "passed"
+    }
+  },
+  "pickle_serialization_environment": {
+    "python": "3.14.3",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.6.0",
+    "numpy": "2.5.1",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0"
+  }
+}

@@ -1,0 +1,9 @@
+Target,Model,CV_RMSE,Validation_MAE,Validation_RMSE,Validation_R2,Training_Time_Seconds,Best_Parameters
+Forward volatility,Random Forest,0.25769984786096034,0.0619123814333672,0.07414463948070607,-0.03323942617177167,15.215334900189191,"{""model__max_depth"": 8, ""model__min_samples_leaf"": 5, ""model__n_estimators"": 400}"
+Forward volatility,XGBoost,0.2404733963857664,0.06081050201504939,0.07773104836049663,-0.1356133885430706,5.449394499883056,"{""model__learning_rate"": 0.03, ""model__max_depth"": 2, ""model__n_estimators"": 200, ""model__subsample"": 0.8}"
+Forward volatility,Linear Regression,0.3203153641062088,0.056944035944161205,0.07800415445562549,-0.14360730563035617,0.09077139990404248,{}
+Forward volatility,Neural Network,0.3259572740193975,0.09128751920282406,0.11984243906912945,-1.6993719618308134,0.8839957998134196,{}
+Direct chooser proxy price,Linear Regression,11.77864852014002,3.5734500272910465,5.4836545718671275,0.4773064670943059,0.029600999783724546,{}
+Direct chooser proxy price,Random Forest,20.29538430153954,9.12544982524495,10.176967892852488,-0.8002953344182429,15.271712800022215,"{""model__max_depth"": 8, ""model__min_samples_leaf"": 5, ""model__n_estimators"": 200}"
+Direct chooser proxy price,XGBoost,20.16013619338643,9.602574552608042,10.722433356152443,-0.9984517096542269,5.7023503999225795,"{""model__learning_rate"": 0.03, ""model__max_depth"": 4, ""model__n_estimators"": 200, ""model__subsample"": 0.8}"
+Direct chooser proxy price,Neural Network,42.916469840675774,23.968642796771817,27.73133102688955,-12.367444118922602,3.5300882002338767,{}

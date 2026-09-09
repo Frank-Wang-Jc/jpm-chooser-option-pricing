@@ -1,0 +1,2 @@
+Nominal_Coverage,Empirical_Test_Coverage,Mean_Interval_Width,Lower_Residual_Quantile,Upper_Residual_Quantile,Interpretation
+0.9,0.996031746031746,42.874444850944414,-31.178108061896054,11.696336789048353,"This is a training-block out-of-fold proxy-error band evaluated on the later test period, not a chooser market-price confidence interval."

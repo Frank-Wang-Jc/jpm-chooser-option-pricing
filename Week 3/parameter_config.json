@@ -1,0 +1,41 @@
+{
+  "paper_reference": {
+    "title": "Exploration of JPMorgan Chooser Option Pricing",
+    "authors": "Huang, Wang, and Wan",
+    "year": 2021,
+    "doi": "10.54691/bcpbm.v15i.224",
+    "parameter_table": 2,
+    "simulation_table": 3
+  },
+  "contract": {
+    "K": 150.0,
+    "T1": 0.5,
+    "T2": 1.0,
+    "currency": "USD",
+    "time_unit": "years"
+  },
+  "paper_replication": {
+    "S0": 156.7,
+    "r": 0.0015,
+    "q": 0.0233,
+    "sigma": 0.282,
+    "market_date": "2021-08-23",
+    "rate_convention": "annual decimal, continuously compounded in BSM"
+  },
+  "week2_updated_baseline": {
+    "data_file": "../Week2/processed_data/market_data_processed.csv",
+    "selection": "latest_complete_row",
+    "date_column": "Date",
+    "spot_column": "Close",
+    "rate_column": "Treasury_Rate",
+    "rate_scale": 0.01,
+    "volatility_column": "Rolling_Volatility_20D",
+    "dividend_yield": 0.0233,
+    "dividend_yield_source": "Huang et al. (2021), Table 2; Week 2 did not collect dividend yield"
+  },
+  "monte_carlo": {
+    "n_paths": 250000,
+    "seed": 20260806,
+    "confidence_level": 0.95
+  }
+}

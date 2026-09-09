@@ -1,0 +1,2 @@
+Benchmark,Actual_Type,N,MAE,RMSE,R2,Mean_Error
+Chooser BSM with trailing 20-day volatility vs ex-post forward-volatility proxy,Model-derived proxy; not an observed chooser transaction price,1720,3.775737380786245,8.356729709460366,0.8241878337349864,-0.2651768219537543

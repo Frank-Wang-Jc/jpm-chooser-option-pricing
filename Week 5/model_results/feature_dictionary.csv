@@ -1,0 +1,20 @@
+Feature,Description,Look_Ahead,Source
+Daily_Return,Current one-day JPM simple return,False,Week 2 or trailing derivation
+Abs_Return_1D,Absolute one-day return,False,Week 2 or trailing derivation
+Rolling_Volatility_5D,Past 5-day annualized JPM volatility,False,Week 2 or trailing derivation
+Rolling_Volatility_10D,Past 10-day annualized JPM volatility,False,Week 2 or trailing derivation
+Rolling_Volatility_20D,Past 20-day annualized JPM volatility,False,Week 2 or trailing derivation
+Rolling_Volatility_60D,Past 60-day annualized JPM volatility,False,Week 2 or trailing derivation
+VIX_Close,Cboe VIX closing level,False,Week 2 or trailing derivation
+VIX_Return,One-day VIX return,False,Week 2 or trailing derivation
+VIX_JPM_Correlation_20D,Past 20-day correlation of JPM and VIX returns,False,Week 2 or trailing derivation
+Treasury_Rate_Decimal,Treasury proxy converted from percent to decimal,False,Week 2 or trailing derivation
+Interest_Rate_Momentum,One-day Treasury-rate change,False,Week 2 or trailing derivation
+Price_Momentum_20D,JPM 20-day price momentum,False,Week 2 or trailing derivation
+MA20_Gap,JPM price relative to 20-day moving average,False,Week 2 or trailing derivation
+MA50_Gap,JPM price relative to 50-day moving average,False,Week 2 or trailing derivation
+Intraday_Range,Daily high-low range divided by close,False,Week 2 or trailing derivation
+Overnight_Gap,Open relative to previous close,False,Week 2 or trailing derivation
+Volume_ZScore_20D,Trading volume standardized over trailing 20 days,False,Week 2 or trailing derivation
+Close,Current adjusted JPM closing price,False,Week 2 or trailing derivation
+Log_Moneyness,Log of current JPM close divided by the fixed strike,False,Week 2 or trailing derivation

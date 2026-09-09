@@ -1,0 +1,7 @@
+Method,Option_Type,Actual_Type,N,MAE,RMSE,R2,Mean_Error
+BSM_Week2_Frozen_Vol,call,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,18,0.3750160412482445,0.46064738372535974,0.9857005774960618,-0.2426662476603282
+BSM_Week2_Frozen_Vol,put,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,18,0.351985230740188,0.4185663873611812,0.9823883203011866,-0.28262446645766537
+BSM_Week2_Frozen_Vol,all,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,36,0.3635006359942162,0.4401101184712805,0.9845034606467085,-0.26264535705899683
+BSM_Cboe_Quoted_IV,call,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,18,0.21185740182065574,0.27289509762682823,0.9949815136355419,-0.1704530869490678
+BSM_Cboe_Quoted_IV,put,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,18,0.11974009747576897,0.1495845274066254,0.9977507101354248,0.09350282553900256
+BSM_Cboe_Quoted_IV,all,Cboe delayed listed JPM vanilla option midpoint; not chooser transaction,36,0.16579874964821237,0.22005370384092557,0.9961259128857852,-0.038475130705032605

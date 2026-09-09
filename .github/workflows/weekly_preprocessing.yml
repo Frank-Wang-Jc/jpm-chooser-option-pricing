@@ -1,0 +1,48 @@
+name: Weekly preprocessing
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monday 10:17 Asia/Shanghai (02:17 UTC)
+    - cron: "17 2 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-preprocessing
+  cancel-in-progress: false
+
+jobs:
+  rebuild-week2-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install preprocessing dependencies
+        run: python -m pip install --disable-pip-version-check numpy pandas
+
+      - name: Run Week 2 preprocessing and feature engineering
+        working-directory: Week2
+        run: python preprocess.py
+
+      - name: Validate generated outputs
+        run: python .github/scripts/validate_week2.py
+
+      - name: Upload processed data and summaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: week2-processed-data-${{ github.run_number }}
+          path: |
+            Week2/processed_data/market_data_processed.csv
+            Week2/processed_data/*_outlier_summary.csv
+          if-no-files-found: error
+          retention-days: 30

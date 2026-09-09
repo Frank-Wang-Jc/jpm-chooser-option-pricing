@@ -1,0 +1,8 @@
+{
+  "random_state": 20260806,
+  "time_series_cv_splits": 4,
+  "purge_gap_trading_days": 20,
+  "selection_metric": "validation RMSE after purge-aware CV tuning",
+  "test_policy": "evaluated once after model selection",
+  "shap_sample_size": 250
+}

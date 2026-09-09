@@ -1,0 +1,15 @@
+{
+  "as_of_date": "2024-12-30",
+  "retrieved_at_utc": "2026-09-07T09:57:43.434790+00:00",
+  "mode": "offline_week2_fallback",
+  "jpm_close": 231.0775604248047,
+  "vix_close": 17.399999618530273,
+  "risk_free_rate": 0.0455,
+  "historical_volatility_20d": 0.1906247800741619,
+  "sources": {
+    "JPM_and_VIX": "G:\\JPM-Chooser Option Pricing\\Week2\\processed_data\\market_data_processed.csv",
+    "risk_free_rate": "G:\\JPM-Chooser Option Pricing\\Week2\\processed_data\\market_data_processed.csv"
+  },
+  "update_status": "offline_requested",
+  "online_error": null
+}

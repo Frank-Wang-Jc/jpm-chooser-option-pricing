@@ -1,0 +1,22 @@
+{
+  "random_state": 20260806,
+  "target_horizon_trading_days": 20,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15,
+    "shuffle": false,
+    "purge_horizon_trading_days": 20
+  },
+  "contract": {
+    "strike": 150.0,
+    "dividend_yield": 0.0233,
+    "choice_time_years": 0.5,
+    "maturity_years": 1.0
+  },
+  "targets": {
+    "approach_1": "Target_Forward_Volatility_20D",
+    "approach_2": "Target_Chooser_Proxy_Price",
+    "target_note": "Both targets use future realized returns for research evaluation; the price target is not an observed chooser transaction."
+  }
+}

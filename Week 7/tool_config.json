@@ -1,0 +1,17 @@
+{
+  "contract": {
+    "strike": 150.0,
+    "dividend_yield": 0.0233,
+    "choice_time_years": 0.5,
+    "maturity_years": 1.0
+  },
+  "stress_scenarios": {
+    "volatility_multiplier": 1.5,
+    "rate_shock_absolute": 0.02
+  },
+  "vix_grid": {
+    "minimum": 10.0,
+    "maximum": 50.0,
+    "points": 81
+  }
+}
