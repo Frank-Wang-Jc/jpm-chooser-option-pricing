@@ -35,7 +35,7 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-The packaged app contains the trained models, cached data, configuration, and supporting modules required for local execution. Its submitted fallback snapshot uses the final Week 2 observation so the artefacts remain reproducible without a network connection; the app can refresh public market inputs when online. Public deployment and the final demonstration recording remain user-account actions; follow the checklists in `Week 8`.
+The packaged app contains the trained models, cached data, configuration, and supporting modules required for local execution. Its submitted fallback snapshot uses the final Week 2 observation so the artefacts remain reproducible without a network connection; the app can refresh public market inputs when online. The project brief requires a deployable tool in a GitHub repository with a README, not a publicly hosted application. The remaining demo can be recorded from the locally running app; follow the checklists in `Week 8`.
 
 ## Automated validation
 

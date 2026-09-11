@@ -15,10 +15,14 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-## Public deployment
+## Deployment readiness
 
-The folder is ready for Streamlit Community Cloud or an equivalent Python host. Push
-`pricing_tool` to a GitHub repository, choose `app.py` as the entrypoint and deploy.
+The folder contains the runnable tool required by the project brief. The GitHub
+repository and this README document its setup. Local execution is sufficient for
+the demo; a public application URL is not required. Cloud hosting is optional.
+
+## Automatic market-data updates
+
 Refresh runs on opening, every 15 minutes during an active session, and on manual
 request. JPM OHLCV, Cboe VIX, FRED DGS10 and DGS1 histories rebuild every original
 model feature at a common completed date. DGS10 preserves the trained ML feature

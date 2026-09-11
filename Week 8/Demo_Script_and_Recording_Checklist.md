@@ -41,7 +41,8 @@ proxy target, out-of-training-range warnings and no investment-advice claim.
 ## Recording checklist
 
 - Use 1080p and enlarge browser text before recording.
+- Run the packaged app locally using its README; a public deployment is not required.
 - Do one practice run under eight minutes.
 - Verify that source dates and the data mode are visible.
 - Do not call the proxy target an actual chooser market price.
-- Submit MP4 plus the public prototype link.
+- Submit the MP4 with the GitHub repository, final report PDF and presentation deck.
