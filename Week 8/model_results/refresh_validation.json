@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checks": {
+    "Week1 unchanged": true,
+    "Week2 unchanged": true,
+    "Week 3 unchanged": true,
+    "Week 4 unchanged": true,
+    "Week 5 unchanged": true,
+    "Week 6 unchanged": true,
+    "best_volatility_model pickle/runtime equivalence on 252 rows": true,
+    "best_direct_pricing_model pickle/runtime equivalence on 252 rows": true,
+    "Original RF proxy RMSE": true,
+    "17 volatility and 19 direct features": true,
+    "No dividend growth features": true,
+    "market_refresh.py shared by both apps": true,
+    "observable_features.py shared by both apps": true,
+    "Learning and Understanding files untouched": true,
+    "Full offline date alignment": true,
+    "Executed notebook agrees with offline engine": true,
+    "Browser automatic timer updated full context": true,
+    "Refresh documentation present once": true
+  },
+  "historical_model_rmse": 4.320338550807385,
+  "offline_model_price": 82.45691446776415,
+  "automatic_refresh": {
+    "status": "PASS",
+    "before": "2026-09-10T05:42:23.067869+00:00",
+    "after": "2026-09-10T05:42:34.001845+00:00",
+    "featureDate": "2026-09-08",
+    "featureCount": 19,
+    "appErrors": 0,
+    "testIntervalSeconds": 5,
+    "productionIntervalSeconds": 900
+  }
+}

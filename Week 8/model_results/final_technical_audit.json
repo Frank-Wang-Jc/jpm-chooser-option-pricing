@@ -2,14 +2,14 @@
   "status": "PASS",
   "check_count": 259,
   "failed_count": 0,
-  "python_files": 14,
+  "python_files": 18,
   "notebooks": 9,
   "code_cells": 100,
   "checks": [
     {
       "check": "Python AST parse",
       "passed": true,
-      "detail": "14 files"
+      "detail": "18 files"
     },
     {
       "check": "Executed cell api_setup.ipynb:2",
@@ -1150,7 +1150,7 @@
     {
       "check": "Metric Approach 1 MAE",
       "passed": true,
-      "detail": 3.1383675959737425
+      "detail": 3.1383675959737434
     },
     {
       "check": "Metric Approach 1 RMSE",
@@ -1165,7 +1165,7 @@
     {
       "check": "Metric Approach 1 Mean_Error",
       "passed": true,
-      "detail": -1.2781284325671833
+      "detail": -1.2781284325671838
     },
     {
       "check": "Metric Week 4 BSM baseline N",
@@ -1218,7 +1218,7 @@
       "detail": -45.02257906032778
     },
     {
-      "check": "Selected route beats BSM",
+      "check": "Finite route comparison without assuming an improvement",
       "passed": true,
       "detail": {
         "Approach 1": 4.320338550807385,
@@ -1308,7 +1308,7 @@
     {
       "check": "OOF lower quantile",
       "passed": true,
-      "detail": -31.178108061896054
+      "detail": -31.17810806189603
     },
     {
       "check": "OOF upper quantile",
@@ -1348,7 +1348,7 @@
     {
       "check": "App finite selected ML",
       "passed": true,
-      "detail": 82.43419451129053
+      "detail": 82.45779357220493
     },
     {
       "check": "App selects Approach 1",
@@ -1359,8 +1359,8 @@
       "check": "App interval ordered",
       "passed": true,
       "detail": [
-        51.25608644939447,
-        94.13053130033887
+        51.27968551030888,
+        94.1541303612533
       ]
     },
     {

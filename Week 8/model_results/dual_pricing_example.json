@@ -7,19 +7,19 @@
     "rho_per_1pct": 1.416729480724399
   },
   "ml_available": true,
-  "feature_context_date": "2024-11-29",
+  "feature_context_date": "2024-12-30",
   "out_of_training_range": {
     "Close": 231.0775604248047
   },
-  "warning": "ML predictions update spot, rate, volatility and VIX while retaining the latest available values for other engineered features. Treat them as a decision-support estimate.",
-  "ml_predicted_forward_volatility": 0.14477227232741285,
-  "approach1_ml_vol_bsm_price": 82.4338145128342,
-  "best_ml_price": 82.4338145128342,
+  "warning": "All ML features share the displayed feature date. Input changes are counterfactual scenarios. DGS10 remains the trained ML rate feature; DGS1 supplies the online BSM discount rate.",
+  "ml_predicted_forward_volatility": 0.16653673756974308,
+  "approach1_ml_vol_bsm_price": 82.45691446776415,
+  "best_ml_price": 82.45691446776415,
   "best_ml_model": "Approach 1 - Random Forest volatility forecast plus BSM",
   "approach2_direct_price": 0.0,
   "error_margin_90": [
-    51.25570645093815,
-    94.13015130188256
+    51.278806405868096,
+    94.1532512568125
   ],
   "error_margin_note": "This is a training-block out-of-fold proxy-error band evaluated on the later test period, not a chooser market-price confidence interval."
 }

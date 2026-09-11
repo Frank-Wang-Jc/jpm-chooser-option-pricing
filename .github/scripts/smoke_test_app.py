@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import sys
+import os
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 APP_DIR = ROOT / "Week 8" / "pricing_tool"
 sys.path.insert(0, str(APP_DIR))
+os.environ['JPM_OFFLINE'] = '1'
 
 from pricing_engine import price_contract  # noqa: E402
 from streamlit.testing.v1 import AppTest  # noqa: E402

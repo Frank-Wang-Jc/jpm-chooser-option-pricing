@@ -1,7 +1,7 @@
 Check,Passed,Detail
 Standalone BSM finite,True,82.52782127278121
-Best ML finite,True,82.4338145128342
-Error band ordered,True,"[51.25570645093815, 94.13015130188256]"
+Best ML finite,True,82.45691446776415
+Error band ordered,True,"[51.278806405868096, 94.1532512568125]"
 Volatility spike increases BSM,True,1.2726001155848365
 Required rate shock is 2 percentage points,True,0.020000000000000004
 ML contract restriction,True,K=160 rejected for ML

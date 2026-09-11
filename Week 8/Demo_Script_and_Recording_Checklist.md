@@ -32,9 +32,11 @@ then show the test-period trend chart. Emphasize the chronological 70/15/15 spli
 
 ## 6:30–7:30 — Data refresh and limitations
 
-Press Refresh public data and show the source dates. Explain the cached fallback. Finish
-with limitations: proxy target, residual market/model risk, stale non-live engineered
-features and no investment-advice claim.
+Press Refresh public data and show the source dates and common feature date. Explain
+that all original features refresh together, automatically every 15 minutes while the
+page remains open. A provider timeout retains cached data with an explicit status.
+Live updates use completed daily observations, not intraday ticks. Finish with the
+proxy target, out-of-training-range warnings and no investment-advice claim.
 
 ## Recording checklist
 

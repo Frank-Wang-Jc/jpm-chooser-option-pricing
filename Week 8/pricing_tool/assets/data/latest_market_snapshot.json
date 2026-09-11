@@ -11,5 +11,31 @@
     "risk_free_rate": "G:\\JPM-Chooser Option Pricing\\Week2\\processed_data\\market_data_processed.csv"
   },
   "update_status": "offline_requested",
-  "online_error": null
+  "online_error": null,
+  "feature_context": {
+    "feature_as_of_date": "2024-12-30",
+    "pricing_rate": 0.0455,
+    "values": {
+      "Daily_Return": -0.007671073530268413,
+      "Abs_Return_1D": 0.007671073530268413,
+      "Rolling_Volatility_5D": 0.15949756918498206,
+      "Rolling_Volatility_10D": 0.24354147196090928,
+      "Rolling_Volatility_20D": 0.19062478007416173,
+      "Rolling_Volatility_60D": 0.3057059097260045,
+      "VIX_Close": 17.399999618530273,
+      "VIX_Return": 0.0909090800379102,
+      "VIX_JPM_Correlation_20D": -0.8452135057492469,
+      "Treasury_Rate_Decimal": 0.0455,
+      "Interest_Rate_Momentum": -0.07000000000000028,
+      "Price_Momentum_20D": -0.041646690292368005,
+      "MA20_Gap": -0.007419932864461964,
+      "MA50_Gap": 0.0077564531656364455,
+      "Intraday_Range": 0.01558580817894511,
+      "Overnight_Gap": -0.009951634792187969,
+      "Volume_ZScore_20D": -0.5213456215398194,
+      "Close": 231.0775604248047,
+      "Log_Moneyness": 0.4321181194856984
+    }
+  },
+  "pricing_rate_source": "Week 2 DGS10 historical proxy"
 }

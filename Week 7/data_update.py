@@ -1,9 +1,9 @@
 """Optional real-time market-data updater with a reproducible offline fallback.
 
 The online path downloads JPM history from Yahoo's public chart endpoint, VIX
-history from Cboe, and the DGS1 one-year Treasury rate from FRED.  The offline
-path reads the latest complete
-Week 2 row.  No API key is required.  Every snapshot records its mode and
+history from Cboe, and DGS10/DGS1 Treasury rates from FRED. The offline
+path reads the latest complete Week 2 row. FRED uses a local API key when
+available, with public CSV access otherwise. Every snapshot records its mode and
 source status so cached/fallback data cannot be mistaken for live data.
 """
 
@@ -39,69 +39,31 @@ def offline_snapshot(project_root: Path):
     }
 
 
-def online_snapshot():
-    def download_bytes(url):
-        request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urlopen(request, timeout=25) as response:
-            return response.read()
-
-    yahoo_url = "https://query1.finance.yahoo.com/v8/finance/chart/JPM?range=3mo&interval=1d"
-    payload = json.loads(download_bytes(yahoo_url))
-    chart = payload["chart"]["result"][0]
-    timestamps = pd.to_datetime(chart["timestamp"], unit="s", utc=True).tz_convert(None)
-    adjusted = chart.get("indicators", {}).get("adjclose", [{}])[0].get("adjclose")
-    values = adjusted or chart["indicators"]["quote"][0]["close"]
-    close = pd.Series(values, index=timestamps, name="JPM_Close").dropna()
-    if len(close) < 21:
-        raise RuntimeError("Yahoo chart endpoint returned fewer than 21 JPM observations.")
-    log_returns = np.log(close / close.shift(1))
-    volatility = float(log_returns.tail(20).std(ddof=1) * np.sqrt(252))
-
-    cboe_url = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
-    vix = pd.read_csv(BytesIO(download_bytes(cboe_url)))
-    vix.columns = [column.strip().upper() for column in vix.columns]
-    vix["DATE"] = pd.to_datetime(vix["DATE"], format="%m/%d/%Y")
-    vix["CLOSE"] = pd.to_numeric(vix["CLOSE"], errors="coerce")
-    vix = vix.dropna(subset=["CLOSE"])
-
-    fred_url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS1"
-    fred = pd.read_csv(BytesIO(download_bytes(fred_url)))
-    fred.columns = ["Date", "DGS1"]
-    fred["Date"] = pd.to_datetime(fred["Date"])
-    fred["DGS1"] = pd.to_numeric(fred["DGS1"], errors="coerce")
-    fred = fred.dropna(subset=["DGS1"])
-
-    return {
-        "as_of_date": str(close.index[-1].date()),
-        "retrieved_at_utc": datetime.now(timezone.utc).isoformat(),
-        "mode": "online",
-        "jpm_close": float(close.iloc[-1]),
-        "vix_close": float(vix["CLOSE"].iloc[-1]),
-        "risk_free_rate": float(fred["DGS1"].iloc[-1]) / 100.0,
-        "historical_volatility_20d": volatility,
-        "source_dates": {
-            "JPM": str(close.index[-1].date()),
-            "VIX": str(vix["DATE"].iloc[-1].date()),
-            "DGS1": str(fred["Date"].iloc[-1].date()),
-        },
-        "sources": {
-            "JPM": yahoo_url,
-            "VIX": cboe_url,
-            "risk_free_rate": fred_url,
-        },
-    }
+def online_snapshot(project_root, previous, output_dir):
+    from market_refresh import refresh
+    return refresh(previous, Path(output_dir) / "runtime_sources")
 
 
 def update_snapshot(project_root: Path, output_dir: Path, online=True):
+    output_dir = Path(output_dir)
+    previous = offline_snapshot(project_root)
+    cache_path = output_dir / "latest_market_snapshot.json"
+    if online and cache_path.exists():
+        try:
+            previous = json.loads(cache_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            pass
     status = "online_success"
     error = None
     if online:
         try:
-            snapshot = online_snapshot()
+            snapshot = online_snapshot(project_root, previous, output_dir)
+            status = snapshot.get("update_status", "online_success")
+            error = snapshot.get("online_error")
         except Exception as exc:
-            snapshot = offline_snapshot(project_root)
+            snapshot = previous
             status = "online_failed_offline_fallback"
-            error = f"{type(exc).__name__}: {exc}"
+            error = type(exc).__name__
     else:
         snapshot = offline_snapshot(project_root)
         status = "offline_requested"
@@ -109,8 +71,10 @@ def update_snapshot(project_root: Path, output_dir: Path, online=True):
     snapshot["online_error"] = error
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "latest_market_snapshot.json").write_text(json.dumps(snapshot, indent=2), encoding="utf-8")
-    pd.DataFrame([snapshot | {"sources": json.dumps(snapshot["sources"], sort_keys=True)}]).to_csv(
+    from market_refresh import atomic_json
+    atomic_json(output_dir / "latest_market_snapshot.json", snapshot)
+    flat = {key: json.dumps(value, sort_keys=True) if isinstance(value, dict) else value for key, value in snapshot.items()}
+    pd.DataFrame([flat]).to_csv(
         output_dir / "latest_market_snapshot.csv", index=False
     )
     return snapshot

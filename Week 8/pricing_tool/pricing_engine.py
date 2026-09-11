@@ -27,8 +27,9 @@ VOLATILITY_MODEL = joblib.load(ASSETS / "models" / "best_volatility_model.joblib
 PRICING_MODEL = joblib.load(ASSETS / "models" / "best_direct_pricing_model.joblib")
 
 
-def _updated_feature_row(spot, strike, rate, volatility, vix):
-    values = dict(FEATURE_CONTEXT["values"])
+def _updated_feature_row(spot, strike, rate, volatility, vix, context):
+    values = dict(context["values"])
+    model_rate = values['Treasury_Rate_Decimal'] + rate - context.get('pricing_rate', values['Treasury_Rate_Decimal'])
     current_bsm = float(simple_chooser_price(
         spot, strike, rate, METADATA["contract"]["q"], volatility,
         METADATA["contract"]["T1"], METADATA["contract"]["T2"]
@@ -36,7 +37,7 @@ def _updated_feature_row(spot, strike, rate, volatility, vix):
     values.update({
         "Close": float(spot),
         "Log_Moneyness": float(np.log(spot / strike)),
-        "Treasury_Rate_Decimal": float(rate),
+        "Treasury_Rate_Decimal": float(model_rate),
         "Rolling_Volatility_20D": float(volatility),
         "VIX_Close": float(vix),
         "Current_Chooser_BSM_Price": current_bsm,
@@ -45,7 +46,8 @@ def _updated_feature_row(spot, strike, rate, volatility, vix):
 
 
 def price_contract(spot, strike=150.0, rate=0.0455, dividend_yield=0.0233,
-                   volatility=0.20, choice_time=0.5, maturity=1.0, vix=17.4):
+                   volatility=0.20, choice_time=0.5, maturity=1.0, vix=17.4, feature_context=None):
+    context = FEATURE_CONTEXT if feature_context is None else feature_context
     if not 0 < choice_time < maturity:
         raise ValueError("Choice time must satisfy 0 < choice_time < maturity.")
     if min(spot, strike, volatility) <= 0:
@@ -82,18 +84,18 @@ def price_contract(spot, strike=150.0, rate=0.0455, dividend_yield=0.0233,
         "bsm_price": bsm,
         "greeks": greeks,
         "ml_available": ml_contract_match,
-        "feature_context_date": FEATURE_CONTEXT["feature_as_of_date"],
+        "feature_context_date": context["feature_as_of_date"],
         "out_of_training_range": ood_flags,
         "warning": (
-            "ML predictions update spot, rate, volatility and VIX while retaining the latest "
-            "available values for other engineered features. Treat them as a decision-support estimate."
+            "All ML features share the displayed feature date. Input changes are counterfactual scenarios. "
+            "DGS10 remains the trained ML rate feature; DGS1 supplies the online BSM discount rate."
         ),
     }
     if not ml_contract_match:
         result["ml_warning"] = "ML models are restricted to the trained K=150, q=2.33%, T1=0.5, T2=1.0 contract."
         return result
 
-    values, current_bsm = _updated_feature_row(spot, strike, rate, volatility, vix)
+    values, current_bsm = _updated_feature_row(spot, strike, rate, volatility, vix, context)
     vol_frame = pd.DataFrame([[values[name] for name in METADATA["volatility_features"]]], columns=METADATA["volatility_features"])
     predicted_vol = float(np.clip(VOLATILITY_MODEL.predict(vol_frame)[0], 1e-4, 3.0))
     approach1 = float(simple_chooser_price(

@@ -45,6 +45,7 @@ report_paths = [
     "Reports/Week4 Report/Model Validation Report.pdf",
     "Reports/Week4 Report/Performance Benchmark Documentation.pdf",
     "Reports/Week6 Report/Model Performance Report.pdf",
+    "Reports/Week7 Report/Comprehensive Sensitivity Analysis Report.pdf",
     "Reports/Week8 Report/Final Project Report.pdf",
 ]
 report_paths.extend(

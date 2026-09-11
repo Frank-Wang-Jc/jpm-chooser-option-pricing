@@ -39,13 +39,14 @@ The packaged app contains the trained models, cached data, configuration, and su
 
 ## Automated validation
 
-GitHub Actions provides two reproducibility checks:
+GitHub Actions provides research validation and a separate current-data refresh:
 
 - `Weekly preprocessing` runs every Monday at 10:17 Asia/Shanghai time and can also be started manually. It rebuilds the Week 2 processed dataset from the archived Week 1 raw inputs, validates the dates, row count, columns, and finite numeric values, then publishes the outputs as a 30-day workflow artifact.
 - `Project validation` runs on pushes and pull requests to `main`. It checks the executed notebooks and required deliverables, then loads the packaged models and performs a Streamlit smoke test in the pinned application environment.
+- `Market data refresh` is configured for Tuesday–Saturday at 19:17 Asia/Shanghai and manual runs. It rebuilds all current model features from completed daily source histories and uploads a dated snapshot artifact. The repository secret supplies the FRED API key. This workflow becomes active when this revision is pushed; it does not retrain models or commit current observations into the historical sample.
 
-The scheduled workflow reproduces the fixed 2018–2024 research sample; it does not silently extend the historical study period. The Week 8 application has a separate public-data refresh path for current JPM, Cboe VIX, and FRED DGS1 inputs.
+The Monday workflow reproduces the fixed 2018–2024 research sample. The Week 7/8 applications independently refresh on opening, every 15 minutes while active, and on manual request. They rebuild all 17 volatility and 19 direct-price features at a common completed date. JPM, Cboe VIX, FRED DGS10 and DGS1 requests have bounded retries and independent caches. DGS10 remains the trained ML rate feature; DGS1 is the live pricing rate. No retraining or new dividend features are introduced.
 
 ## Reports
 
-The `Reports` directory contains 14 PDF documents: weekly reports for Weeks 1–8, the data specification, model validation, performance benchmark documentation, model performance report, final project report, and project closure report.
+The publication set contains 15 PDFs: weekly reports for Weeks 1–8, data specification, model validation, performance benchmark documentation, model performance report, comprehensive sensitivity analysis, final project report, and project closure report. Revised Word files are maintained locally and exported to PDF before publication. Learning and Understanding documents are excluded.

@@ -18,5 +18,65 @@
   "fit_rows": 1388,
   "fit_start": "2018-03-29",
   "fit_end": "2023-10-31",
-  "note": "Ranges use only rows included in final model fitting; flags indicate extrapolation risk, not automatic rejection."
+  "note": "Ranges use only rows included in final model fitting; flags indicate extrapolation risk, not automatic rejection.",
+  "Daily_Return": {
+    "min": -0.1496487197951057,
+    "max": 0.1801249556967763
+  },
+  "Abs_Return_1D": {
+    "min": 0.0,
+    "max": 0.1801249556967763
+  },
+  "Rolling_Volatility_5D": {
+    "min": 0.0183833673577528,
+    "max": 2.1501921667259167
+  },
+  "Rolling_Volatility_10D": {
+    "min": 0.0457175939457827,
+    "max": 1.6800549017783677
+  },
+  "Rolling_Volatility_60D": {
+    "min": 0.1333573452401426,
+    "max": 0.926498116645218
+  },
+  "VIX_Return": {
+    "min": -0.2337352471753954,
+    "max": 0.6164204319953999
+  },
+  "VIX_JPM_Correlation_20D": {
+    "min": -0.9082612630004508,
+    "max": 0.3492572082507483
+  },
+  "Interest_Rate_Momentum": {
+    "min": -0.25,
+    "max": 0.29
+  },
+  "Price_Momentum_20D": {
+    "min": -0.4020127907965681,
+    "max": 0.2640358173922605
+  },
+  "MA20_Gap": {
+    "min": -0.2671172105039586,
+    "max": 0.1868273181543371
+  },
+  "MA50_Gap": {
+    "min": -0.3576624493223704,
+    "max": 0.2153819095207387
+  },
+  "Intraday_Range": {
+    "min": 0.0041430972280312,
+    "max": 0.131301249091941
+  },
+  "Overnight_Gap": {
+    "min": -0.1800596878911388,
+    "max": 0.0990675929208695
+  },
+  "Volume_ZScore_20D": {
+    "min": -2.1707523315552217,
+    "max": 4.036586335778894
+  },
+  "Log_Moneyness": {
+    "min": -0.8139763855064387,
+    "max": 0.0164846752510484
+  }
 }

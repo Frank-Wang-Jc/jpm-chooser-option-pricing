@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import sys
+import time
+import os
 from pathlib import Path
 
 import numpy as np
@@ -25,19 +27,25 @@ from data_update import update_snapshot
 
 
 def main():
-    st.set_page_config(page_title="JPM Chooser Option Prototype", layout="wide")
     st.title("JPM Chooser Option Pricing Prototype")
     st.caption("Week 7 prototype. Prices are research estimates, not trade recommendations.")
 
-    snapshot_path = Path(__file__).resolve().parent / "live_data" / "latest_market_snapshot.json"
-    if st.sidebar.button("Refresh online market snapshot"):
+    base = Path(__file__).resolve().parent / "live_data"
+    snapshot_path = base / "runtime" / "latest_market_snapshot.json"
+    auto_due = time.monotonic() - st.session_state.get("last_refresh", -1000) >= 900
+    requested = st.sidebar.button("Refresh online market snapshot")
+    if requested or (auto_due and os.environ.get("JPM_OFFLINE") != "1"):
+        st.session_state.last_refresh = time.monotonic()
         snapshot = update_snapshot(ROOT, snapshot_path.parent, online=True)
-        st.sidebar.success(f"Update status: {snapshot['update_status']}")
-    if snapshot_path.exists():
+        st.sidebar.info(f"Update status: {snapshot['update_status']}")
+    read_path = base / "latest_market_snapshot.json" if os.environ.get("JPM_OFFLINE") == "1" and not requested else snapshot_path
+    if read_path.exists():
         import json
-        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        snapshot = json.loads(read_path.read_text(encoding="utf-8"))
     else:
-        snapshot = update_snapshot(ROOT, snapshot_path.parent, online=False)
+        import json
+        snapshot = json.loads((base / "latest_market_snapshot.json").read_text(encoding="utf-8"))
+    st.sidebar.caption("Automatic refresh every 15 minutes while open. Completed daily data; source dates shown below.")
 
     st.sidebar.header("Contract and market inputs")
     spot = st.sidebar.number_input("JPM spot price ($)", min_value=0.01, value=float(snapshot["jpm_close"]), step=1.0)
@@ -71,5 +79,16 @@ def main():
     st.info("The prototype uses the Week 3/4 BSM chooser engine. ML dual pricing is added in Week 8 after model packaging checks.")
 
 
+@st.fragment(run_every=float(os.environ.get('JPM_REFRESH_SECONDS', '900')))
+def refresh_timer():
+    interval = float(os.environ.get('JPM_REFRESH_SECONDS', '900'))
+    if os.environ.get('JPM_OFFLINE') != '1' and time.monotonic() - st.session_state.get('last_refresh', 0) >= interval:
+        update_snapshot(ROOT, Path(__file__).resolve().parent / 'live_data/runtime', online=True)
+        st.session_state.last_refresh = time.monotonic()
+        st.rerun()
+
+
 if __name__ == "__main__":
+    st.set_page_config(page_title="JPM Chooser Option Prototype", layout="wide")
     main()
+    refresh_timer()

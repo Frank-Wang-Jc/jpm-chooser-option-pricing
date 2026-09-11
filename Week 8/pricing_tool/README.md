@@ -19,8 +19,18 @@ python -m streamlit run app.py
 
 The folder is ready for Streamlit Community Cloud or an equivalent Python host. Push
 `pricing_tool` to a GitHub repository, choose `app.py` as the entrypoint and deploy.
-No API key is required. The refresh button uses public JPM, Cboe VIX and FRED DGS1
-endpoints and falls back to the bundled, explicitly labelled cache if a source fails.
+Refresh runs on opening, every 15 minutes during an active session, and on manual
+request. JPM OHLCV, Cboe VIX, FRED DGS10 and DGS1 histories rebuild every original
+model feature at a common completed date. DGS10 preserves the trained ML feature
+meaning; DGS1 supplies the one-year pricing rate. The model and its 17/19 feature
+lists remain unchanged.
+
+FRED uses `FRED_API_KEY` from the environment or a local `.env` when available,
+otherwise the public CSV endpoint. Requests use a 12-second timeout and two attempts.
+Sources refresh independently and fall back to their own caches. The app retains
+the last complete snapshot if the required histories cannot be assembled.
+`JPM_OFFLINE=1` uses the bundled 2024-12-30 context for reproducible demonstrations.
+Runtime caches are separate from the committed research sample and are gitignored.
 
 ## Important interpretation
 

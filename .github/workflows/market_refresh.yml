@@ -1,0 +1,33 @@
+name: Market data refresh
+on:
+  workflow_dispatch:
+  schedule:
+    # Tuesday-Saturday 19:17 Asia/Shanghai, after the prior US session.
+    - cron: '17 11 * * 2-6'
+permissions:
+  contents: read
+concurrency:
+  group: market-refresh
+  cancel-in-progress: false
+jobs:
+  refresh-market-inputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install data dependencies
+        run: python -m pip install numpy pandas
+      - name: Refresh sources and all model features
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python "Week 8/pricing_tool/data_update.py"
+      - name: Archive dated market inputs
+        uses: actions/upload-artifact@v6
+        with:
+          name: market-inputs-${{ github.run_number }}
+          path: Week 8/pricing_tool/assets/data/runtime/snapshot.json
+          if-no-files-found: error
+          retention-days: 30

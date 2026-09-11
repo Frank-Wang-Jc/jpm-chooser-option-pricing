@@ -47,3 +47,5 @@ jobs:
 
       - name: Run pricing-engine and Streamlit smoke tests
         run: python .github/scripts/smoke_test_app.py
+      - name: Verify point-in-time features and refresh fallbacks
+        run: python .github/scripts/test_feature_refresh.py

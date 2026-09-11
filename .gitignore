@@ -11,6 +11,8 @@ Thumbs.db
 # Local archives
 /*.zip
 /*.rar
+/Week 8/pricing_tool/assets/data/runtime/
+/Week 7/live_data/runtime_sources/
 
 # Published reports
 /Reports/**
@@ -29,3 +31,5 @@ Thumbs.db
 !/Reports/Week6 Report/Week 6 Weekly Report.pdf
 !/Reports/Week7 Report/Week 7 Weekly Report.pdf
 !/Reports/Week8 Report/Week 8 Weekly Report.pdf
+!/Reports/Week7 Report/Comprehensive Sensitivity Analysis Report.pdf
+/Week 7/live_data/runtime/
