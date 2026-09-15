@@ -1,5 +1,5 @@
 Approach,Feature_Group,Mean_Absolute_SHAP,Share_of_Total_SHAP
 Approach 1 Random Forest,Other,0.0841313610872234,0.5920168373794089
 Approach 1 Random Forest,VIX-related,0.0579783827160693,0.4079831626205911
-Approach 2 Linear Regression,Other,20.063729415132332,0.9493593520526642
-Approach 2 Linear Regression,VIX-related,1.0702377931238416,0.05064064794733587
+Approach 2 Bounded time-value regression,Other,20.71686661197042,0.7670763723890456
+Approach 2 Bounded time-value regression,VIX-related,6.290700506083431,0.23292362761095436

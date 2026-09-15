@@ -16,6 +16,7 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBRegressor
+from bounded_pricing import BoundedChooserRegressor
 
 
 def metrics(actual, predicted):
@@ -80,7 +81,16 @@ def tune_and_validate(X_train, y_train, X_validation, y_validation, random_state
     splitter = TimeSeriesSplit(n_splits=cv_splits, gap=purge_gap)
     fitted = {}
     rows = []
-    for name, spec in candidate_specs(random_state).items():
+    specs = candidate_specs(random_state)
+    if target_name == 'Direct chooser proxy price':
+        # The legacy unbounded candidates remain documented in the revision
+        # audit. Deployment now requires structural pointwise price bounds.
+        specs = {'Bounded time-value regression': {
+            'estimator': BoundedChooserRegressor(),
+            'grid': {'alpha': [.1, 1., 10., 100., 1000.],
+                     'distance_scale': ['raw', 'historical']},
+        }}
+    for name, spec in specs.items():
         start = time.perf_counter()
         if spec["grid"]:
             search = GridSearchCV(

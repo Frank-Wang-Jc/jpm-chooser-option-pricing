@@ -10,7 +10,17 @@ The saved estimators compare two ML extensions of the Week 3 chooser BSM model. 
 - Boundary control: 20 rows are purged before validation and another 20 before test because each target uses the next 20 trading days.
 - Hyperparameter search: four-fold expanding-window TimeSeriesSplit with `gap=20` inside the training block.
 - Selection: lowest validation RMSE within each approach after CV tuning.
-- Final evaluation: the chronological test period is evaluated once after selection.
+- Revision evaluation: the historical test period is reused retrospectively after the September 2026 live extrapolation failure. It is not a new untouched holdout for this repair.
+
+## Direct pricing repair
+
+The old unbounded Linear Regression predicted -111.5589 dollars at the 2026-09-10 snapshot. Dollar spot and log moneyness had 0.9964 correlation in the training block and contributed -103.7549 and -42.6280 dollars to that prediction. Output clipping concealed the invalid prediction as a zero-height bar.
+
+The replacement `BoundedChooserRegressor` learns a normalized time-value fraction through a logistic link. Discounted spot and strike determine structural lower and upper bounds. Regularization and non-positive moneyness-distance coefficients control the tails. It predicts price directly, without calling BSM or estimating a forward-volatility target. The original 19-column interface, upstream research sample, fixed contract and Approach 1 remain in place.
+
+Purged training CV selects alpha=0.1 and historical-volatility-scaled moneyness. Validation RMSE is 7.3983 versus 5.4837 for the legacy regression: the repair is not uniformly more accurate. The retrospective 252-row test improves from RMSE 49.9891 to 4.5404, with MAE 2.8501 and R2 0.9530. Approach 1 remains the primary route by RMSE, while Approach 2 has lower test MAE. Dollar-unit permutation SHAP explains the complete bounded predictor.
+
+Pointwise price bounds and sensible extreme-moneyness limits address the invalid-price failure. They do not prove an arbitrage-free surface or accuracy on real chooser transactions. Out-of-training warnings remain visible. Online structural discounting uses the actual pricing rate separately from the trained DGS10 feature.
 
 ## Target limitation
 

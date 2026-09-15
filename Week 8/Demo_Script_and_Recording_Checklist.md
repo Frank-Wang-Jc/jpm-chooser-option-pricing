@@ -18,6 +18,8 @@ JPM stock close as an option price.
 Compare the BSM price, selected Random Forest volatility-plus-BSM price and direct-price
 benchmark. State the final metrics shown in the application. Describe the 90% interval as
 an out-of-fold proxy-error band rather than a market bid/ask spread.
+Explain that the repaired direct model learns bounded normalized time value, without
+clipping negative prices to zero. Bounds do not establish accuracy outside training.
 
 ## 3:30–5:00 — Sensitivity and stress tests
 
@@ -29,6 +31,9 @@ normally rises with volatility.
 
 Open the model-performance tab. Show MAE, RMSE and R² for BSM, Approach 1 and Approach 2,
 then show the test-period trend chart. Emphasize the chronological 70/15/15 split.
+State that the repair reuses the historical test retrospectively. Direct RMSE is now
+4.54 versus 4.32 for the selected route and 4.87 for BSM. Direct MAE is lower, but its
+earlier validation RMSE worsened, so the improvement is not uniform.
 
 ## 6:30–7:30 — Data refresh and limitations
 
@@ -42,6 +47,8 @@ proxy target, out-of-training-range warnings and no investment-advice claim.
 
 - Use 1080p and enlarge browser text before recording.
 - Run the packaged app locally using its README; a public deployment is not required.
+- Restart Streamlit after installing the repaired model; refreshing public data alone
+  does not retrain or reload the model. Check all three numeric prices before recording.
 - Do one practice run under eight minutes.
 - Verify that source dates and the data mode are visible.
 - Do not call the proxy target an actual chooser market price.

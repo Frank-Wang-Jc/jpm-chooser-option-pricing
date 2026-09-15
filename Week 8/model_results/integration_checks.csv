@@ -1,5 +1,6 @@
 Check,Passed,Detail
 Standalone BSM finite,True,82.52782127278121
+Direct structural bounds,True,82.49861715882106
 Best ML finite,True,82.45691446776415
 Error band ordered,True,"[51.278806405868096, 94.1532512568125]"
 Volatility spike increases BSM,True,1.2726001155848365

@@ -15,7 +15,7 @@ This repository contains a continuous eight-week quantitative research project f
 
 ## Key result
 
-On the 252-row held-out chronological proxy test set, the selected Random Forest volatility-forecast-plus-BSM route achieved RMSE **4.3203**, compared with **4.8706** for the Week 4 BSM baseline—an **11.30%** reduction. The direct-price Linear Regression benchmark produced RMSE **49.9891** and is retained as a documented extrapolation failure. These are theoretical proxy-target results, not claims of accuracy against public historical chooser transactions.
+On the 252-row historical chronological proxy test set, the selected Random Forest volatility-forecast-plus-BSM route achieved RMSE **4.3203**, compared with **4.8706** for the Week 4 BSM baseline, an **11.30%** reduction. After an invalid live extrapolation, bounded direct time-value regression replaced the unbounded Linear Regression. Its retrospective test RMSE is **4.5404** (legacy: **49.9891**) and MAE **2.8501**. Its validation RMSE is higher than the legacy model, so this is not a uniform accuracy improvement. The historical test is reused for this repair, not a new untouched holdout. These are theoretical proxy-target results, not accuracy claims against actual chooser transactions.
 
 ## Important validation boundary
 

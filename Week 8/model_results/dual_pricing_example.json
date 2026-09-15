@@ -12,11 +12,16 @@
     "Close": 231.0775604248047
   },
   "warning": "All ML features share the displayed feature date. Input changes are counterfactual scenarios. DGS10 remains the trained ML rate feature; DGS1 supplies the online BSM discount rate.",
-  "ml_predicted_forward_volatility": 0.16653673756974308,
+  "ml_predicted_forward_volatility": 0.1665367375697432,
   "approach1_ml_vol_bsm_price": 82.45691446776415,
   "best_ml_price": 82.45691446776415,
   "best_ml_model": "Approach 1 - Random Forest volatility forecast plus BSM",
-  "approach2_direct_price": 0.0,
+  "approach2_direct_price": 82.49861715882106,
+  "direct_price_bounds": [
+    82.42775339106572,
+    369.08363416265206
+  ],
+  "direct_model_note": "Direct normalized time-value regression with structural bounds; no zero clipping. Out-of-training estimates still require validation.",
   "error_margin_90": [
     51.278806405868096,
     94.1532512568125

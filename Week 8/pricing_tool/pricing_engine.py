@@ -102,7 +102,12 @@ def price_contract(spot, strike=150.0, rate=0.0455, dividend_yield=0.0233,
         spot, strike, rate, dividend_yield, predicted_vol, choice_time, maturity
     ))
     price_frame = pd.DataFrame([[values[name] for name in METADATA["pricing_features"]]], columns=METADATA["pricing_features"])
-    approach2 = max(0.0, float(PRICING_MODEL.predict(price_frame)[0]))
+    # Keep the DGS10 feature semantics, but use the actual pricing rate for
+    # structural discounting and forward moneyness (DGS1 for online pricing).
+    approach2 = float(PRICING_MODEL.predict(price_frame, pricing_rate=rate)[0])
+    direct_lower, direct_upper = PRICING_MODEL.price_bounds(price_frame, pricing_rate=rate)
+    if not np.isfinite(approach2) or not direct_lower[0] - 1e-8 <= approach2 <= direct_upper[0] + 1e-8:
+        raise ValueError('Direct pricing model returned an invalid bounded estimate.')
     best_ml = approach1
     lower = max(0.0, best_ml + ERROR_INTERVAL["lower_residual_quantile"])
     upper = max(lower, best_ml + ERROR_INTERVAL["upper_residual_quantile"])
@@ -112,6 +117,8 @@ def price_contract(spot, strike=150.0, rate=0.0455, dividend_yield=0.0233,
         "best_ml_price": best_ml,
         "best_ml_model": f"Approach 1 - {METADATA['selected_volatility_model']} volatility forecast plus BSM",
         "approach2_direct_price": approach2,
+        "direct_price_bounds": [float(direct_lower[0]), float(direct_upper[0])],
+        "direct_model_note": "Direct normalized time-value regression with structural bounds; no zero clipping. Out-of-training estimates still require validation.",
         "error_margin_90": [lower, upper],
         "error_margin_note": ERROR_INTERVAL["limitation"],
     })

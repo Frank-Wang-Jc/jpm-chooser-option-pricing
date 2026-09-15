@@ -91,6 +91,8 @@ def dashboard():
                 "Price": [result["bsm_price"], result["approach1_ml_vol_bsm_price"], result["approach2_direct_price"]],
             })
             st.plotly_chart(px.bar(table, x="Route", y="Price", color="Route", text_auto=".2f"), width="stretch")
+            st.dataframe(table, hide_index=True, width="stretch")
+            st.caption(result['direct_model_note'])
             st.caption(result["error_margin_note"])
             if result["out_of_training_range"]:
                 st.warning("ML extrapolation warning — outside training range: " + ", ".join(result["out_of_training_range"].keys()))

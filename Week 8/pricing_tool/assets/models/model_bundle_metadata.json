@@ -1,6 +1,20 @@
 {
+  "direct_model_revision": "bounded_time_value_v1",
+  "direct_model_module": "bounded_pricing.py",
+  "direct_price_constraints": "abs(S exp(-qT)-K exp(-rT)) <= price <= S exp(-qT)+K exp(-rT)",
+  "direct_model_parameters": {
+    "alpha": 0.1,
+    "distance_scale": "historical",
+    "dividend_yield": 0.0233,
+    "epsilon": 1e-08,
+    "loss": "logit",
+    "maturity": 1.0,
+    "strike": 150.0,
+    "tail_floor": 0.01
+  },
+  "revision_evaluation_policy": "Model revised after a live extrapolation failure. Hyperparameters selected by purged training CV. Historical test is reused for retrospective comparison, not a new untouched test.",
   "selected_volatility_model": "Random Forest",
-  "selected_direct_pricing_model": "Linear Regression",
+  "selected_direct_pricing_model": "Bounded time-value regression",
   "volatility_features": [
     "Daily_Return",
     "Abs_Return_1D",
@@ -52,5 +66,49 @@
   "fit_start": "2018-03-29",
   "fit_end": "2023-10-31",
   "purge_gap_trading_days": 20,
-  "target_note": "Chooser target is an ex-post forward-volatility BSM proxy, not an observed chooser transaction price."
+  "target_note": "Chooser target is an ex-post forward-volatility BSM proxy, not an observed chooser transaction price.",
+  "serialized_model_artifacts": [
+    {
+      "file": "best_volatility_model.pkl",
+      "format": "pickle",
+      "purpose": "Week 6 rubric deliverable"
+    },
+    {
+      "file": "best_direct_pricing_model.pkl",
+      "format": "pickle",
+      "purpose": "Week 6 rubric deliverable"
+    },
+    {
+      "file": "best_volatility_model.joblib",
+      "format": "joblib",
+      "purpose": "Week 8 runtime"
+    },
+    {
+      "file": "best_direct_pricing_model.joblib",
+      "format": "joblib",
+      "purpose": "Week 8 runtime"
+    }
+  ],
+  "pickle_round_trip_validation": {
+    "best_volatility_model": {
+      "pickle_file": "best_volatility_model.pkl",
+      "rows_checked": 252,
+      "max_absolute_difference_vs_saved_week6_predictions": 1.6653345369377348e-16,
+      "status": "passed"
+    },
+    "best_direct_pricing_model": {
+      "pickle_file": "best_direct_pricing_model.pkl",
+      "rows_checked": 252,
+      "max_absolute_difference_vs_saved_week6_predictions": 0.0,
+      "status": "passed"
+    }
+  },
+  "pickle_serialization_environment": {
+    "python": "3.14.3",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.6.0",
+    "numpy": "2.5.1",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0"
+  }
 }

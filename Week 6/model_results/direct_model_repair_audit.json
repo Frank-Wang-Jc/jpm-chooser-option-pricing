@@ -1,0 +1,57 @@
+{
+  "selected_params": {
+    "alpha": 0.1,
+    "distance_scale": "historical"
+  },
+  "cv_rmse": 11.472781987734542,
+  "validation_rmse_new": 7.398281695317222,
+  "validation_rmse_old": 5.4836545718671275,
+  "live_new": 201.70185743174838,
+  "live_old": -111.55886604969123,
+  "live_bounds": [
+    201.70183192178249,
+    489.1327293731472
+  ],
+  "legacy_test": {
+    "N": 252,
+    "MAE": 45.0274593640725,
+    "RMSE": 49.9890896041052,
+    "R2": -4.691525815019749,
+    "negative_predictions": 0
+  },
+  "repaired_test": {
+    "N": 252,
+    "MAE": 2.8500832414053434,
+    "RMSE": 4.540413263931448,
+    "R2": 0.9530463863150842,
+    "negative_predictions": 0
+  },
+  "historical_test_policy": "Retrospective reuse, not pristine holdout for revision. No parameters changed after this evaluation.",
+  "post_2024_diagnostic": {
+    "start": "2025-01-02",
+    "end": "2026-08-13",
+    "legacy_raw": {
+      "N": 404,
+      "MAE": 213.2447031349362,
+      "RMSE": 218.85798686124556,
+      "R2": -51.06209293721143,
+      "negative_predictions": 404
+    },
+    "legacy_clipped": {
+      "N": 404,
+      "MAE": 139.5523966584611,
+      "RMSE": 142.81072764420514,
+      "R2": -21.167590329866023,
+      "negative_predictions": 0
+    },
+    "repaired": {
+      "N": 404,
+      "MAE": 0.9380178484439308,
+      "RMSE": 3.7972205122844853,
+      "R2": 0.9843278543419002,
+      "negative_predictions": 0
+    },
+    "policy": "Post-freeze diagnostic only. Recent cached adjusted historical data and DGS10 target convention, not point-in-time vintage data or observed option transactions. Not used for fitting, selection or tuning."
+  },
+  "approach1_predictions_unchanged": true
+}

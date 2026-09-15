@@ -1,6 +1,20 @@
 {
+  "direct_model_revision": "bounded_time_value_v1",
+  "direct_model_module": "bounded_pricing.py",
+  "direct_price_constraints": "abs(S exp(-qT)-K exp(-rT)) <= price <= S exp(-qT)+K exp(-rT)",
+  "direct_model_parameters": {
+    "alpha": 0.1,
+    "distance_scale": "historical",
+    "dividend_yield": 0.0233,
+    "epsilon": 1e-08,
+    "loss": "logit",
+    "maturity": 1.0,
+    "strike": 150.0,
+    "tail_floor": 0.01
+  },
+  "revision_evaluation_policy": "Model revised after a live extrapolation failure. Hyperparameters selected by purged training CV. Historical test is reused for retrospective comparison, not a new untouched test.",
   "selected_volatility_model": "Random Forest",
-  "selected_direct_pricing_model": "Linear Regression",
+  "selected_direct_pricing_model": "Bounded time-value regression",
   "volatility_features": [
     "Daily_Return",
     "Abs_Return_1D",
@@ -79,7 +93,7 @@
     "best_volatility_model": {
       "pickle_file": "best_volatility_model.pkl",
       "rows_checked": 252,
-      "max_absolute_difference_vs_saved_week6_predictions": 2.498001805406602e-16,
+      "max_absolute_difference_vs_saved_week6_predictions": 1.6653345369377348e-16,
       "status": "passed"
     },
     "best_direct_pricing_model": {

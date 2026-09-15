@@ -49,3 +49,5 @@ jobs:
         run: python .github/scripts/smoke_test_app.py
       - name: Verify point-in-time features and refresh fallbacks
         run: python .github/scripts/test_feature_refresh.py
+      - name: Verify bounded direct pricing and serialization
+        run: python .github/scripts/test_direct_pricing.py

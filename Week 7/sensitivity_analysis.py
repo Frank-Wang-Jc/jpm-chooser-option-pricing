@@ -63,7 +63,7 @@ def apply_ml_scenario(row, volatility_model, pricing_model, volatility_features,
         scenario_row["Close"], strike, scenario_row["Treasury_Rate_Decimal"],
         dividend_yield, predicted_volatility, choice_time, maturity,
     ))
-    approach2_price = max(0.0, float(pricing_model.predict(pd.DataFrame([scenario_row[pricing_features].to_dict()]))[0]))
+    approach2_price = float(pricing_model.predict(pd.DataFrame([scenario_row[pricing_features].to_dict()]))[0])
     return {
         "Scenario": scenario,
         "Input_VIX": float(scenario_row["VIX_Close"]),

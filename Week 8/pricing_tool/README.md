@@ -38,6 +38,9 @@ Runtime caches are separate from the committed research sample and are gitignore
 
 ## Important interpretation
 
+- Approach 2 uses bounded normalized time-value regression. It enforces structural pointwise price bounds and controlled moneyness tails without clipping negative output to zero. Keep `bounded_pricing.py` with the serialized model. This does not establish full-surface arbitrage freedom or reliable out-of-range market accuracy.
+- The model-repair revision re-evaluates the existing historical test retrospectively. Approach 1 remains primary by RMSE; the revised direct route has lower test MAE but a worse development validation RMSE than its predecessor.
+
 - The ML model is restricted to the paper-matched contract K=$150, q=2.33%, T1=0.5,
   T2=1.0. BSM remains available for other valid contract inputs.
 - Public historical chooser-option transaction prices were not available. The ML target
