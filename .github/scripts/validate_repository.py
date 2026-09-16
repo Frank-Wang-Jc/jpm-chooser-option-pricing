@@ -1,11 +1,40 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import subprocess
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
+# A passing audit is valid only for the model and pricing code it actually checked.
+audit = json.loads((ROOT / 'Week 8/model_results/final_technical_audit.json').read_text(encoding='utf-8'))
+metadata = json.loads((ROOT / 'Week 6/trained_models/model_bundle_metadata.json').read_text(encoding='utf-8'))
+if audit.get('status') != 'PASS' or audit.get('failed_count') != 0:
+    raise AssertionError('The final technical audit did not pass')
+if audit.get('direct_model_revision') != metadata.get('direct_model_revision'):
+    raise AssertionError('The final technical audit refers to a different model revision')
+audited_files = {
+    'Week 6/trained_models/best_volatility_model.pkl',
+    'Week 6/trained_models/best_direct_pricing_model.pkl',
+    'Week 6/trained_models/model_bundle_metadata.json',
+    'Week 6/model_results/model_comparison.csv',
+    'Week 6/model_results/test_predictions.csv',
+    'Week 8/pricing_tool/pricing_engine.py',
+    'Week 8/pricing_tool/bounded_pricing.py',
+}
+if set(audit.get('artifact_sha256', {})) != audited_files:
+    raise AssertionError('The final technical audit is missing artifact fingerprints')
+for relative_path in sorted(audited_files):
+    content = (ROOT / relative_path).read_bytes()
+    if Path(relative_path).suffix in {'.py', '.json', '.csv'}:
+        content = content.replace(b'\r\n', b'\n')
+    actual = hashlib.sha256(content).hexdigest()
+    if actual != audit['artifact_sha256'][relative_path]:
+        raise AssertionError(f'Stale final technical audit: {relative_path}')
+checks = audit.get('checks', [])
+if not checks or audit.get('check_count') != len(checks) or any(c.get('passed') is not True for c in checks):
+    raise AssertionError('Invalid final technical audit check records')
 week_dirs = [ROOT / "Week1", ROOT / "Week2"] + [ROOT / f"Week {week}" for week in range(3, 9)]
 
 for directory in week_dirs:
@@ -79,4 +108,5 @@ print({
     "code_cells": code_cells,
     "required_deliverables": len(required_files),
     "published_pdf_reports": len(report_paths),
+    "current_technical_audit_checks": len(checks),
 })

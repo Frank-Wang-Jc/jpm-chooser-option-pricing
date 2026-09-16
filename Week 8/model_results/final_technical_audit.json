@@ -1,15 +1,28 @@
 {
+  "generated_at_utc": "2026-09-16T08:10:58.976496+00:00",
+  "direct_model_revision": "bounded_time_value_v1",
+  "evaluation_policy": "Model revised after a live extrapolation failure. Hyperparameters selected by purged training CV. Historical test is reused for retrospective comparison, not a new untouched test.",
+  "fingerprint_policy": "sha256; CRLF normalized to LF for .py/.json/.csv; binary files unchanged",
+  "artifact_sha256": {
+    "Week 6/trained_models/best_volatility_model.pkl": "b960a2626325ec6906c4d5d1f0acbe1058dc7dd7632d927d185e306d9c47da9c",
+    "Week 6/trained_models/best_direct_pricing_model.pkl": "ba7b9abb80626984430bf32441c0e6cede758b48fb36ada073066010d48fc36d",
+    "Week 6/trained_models/model_bundle_metadata.json": "96eb66328db4951973ac5affd2afefac053130c5224a6417f41e09292e1e3eec",
+    "Week 6/model_results/model_comparison.csv": "129f9f0ab00debd8afdf971abe5549e88a512ab27c4c5247d86b7e25d4f7affe",
+    "Week 6/model_results/test_predictions.csv": "4563002a03460b5852d178043d3a8e8e2fa49b7a4c094e1b0e76f409ff173a01",
+    "Week 8/pricing_tool/pricing_engine.py": "9d07f98e00a1f34831229e91e64d43f581dcc44cbcee72385147015b27757a82",
+    "Week 8/pricing_tool/bounded_pricing.py": "db819274ff68b52611b8ec2ab0e692e77920b9865824d585d495190b4ebd2dc9"
+  },
   "status": "PASS",
-  "check_count": 259,
+  "check_count": 266,
   "failed_count": 0,
-  "python_files": 18,
+  "python_files": 20,
   "notebooks": 9,
   "code_cells": 100,
   "checks": [
     {
       "check": "Python AST parse",
       "passed": true,
-      "detail": "18 files"
+      "detail": "20 files"
     },
     {
       "check": "Executed cell api_setup.ipynb:2",
@@ -1130,17 +1143,27 @@
       "check": "Validation selects volatility model",
       "passed": true,
       "detail": {
-        "Direct chooser proxy price": "Linear Regression",
+        "Direct chooser proxy price": "Bounded time-value regression",
         "Forward volatility": "Random Forest"
       }
     },
     {
-      "check": "Validation selects direct model",
+      "check": "Current direct model revision",
+      "passed": true,
+      "detail": "Bounded time-value regression"
+    },
+    {
+      "check": "Direct revision parameters match recorded training CV",
       "passed": true,
       "detail": {
-        "Direct chooser proxy price": "Linear Regression",
-        "Forward volatility": "Random Forest"
+        "alpha": 0.1,
+        "distance_scale": "historical"
       }
+    },
+    {
+      "check": "Direct revision test reuse disclosed",
+      "passed": true,
+      "detail": "Model revised after a live extrapolation failure. Hyperparameters selected by purged training CV. Historical test is reused for retrospective comparison, not a new untouched test."
     },
     {
       "check": "Metric Approach 1 N",
@@ -1165,7 +1188,7 @@
     {
       "check": "Metric Approach 1 Mean_Error",
       "passed": true,
-      "detail": -1.2781284325671838
+      "detail": -1.2781284325671833
     },
     {
       "check": "Metric Week 4 BSM baseline N",
@@ -1200,30 +1223,30 @@
     {
       "check": "Metric Approach 2 MAE",
       "passed": true,
-      "detail": 45.0274593640725
+      "detail": 2.8500832414053425
     },
     {
       "check": "Metric Approach 2 RMSE",
       "passed": true,
-      "detail": 49.9890896041052
+      "detail": 4.540413263931448
     },
     {
       "check": "Metric Approach 2 R2",
       "passed": true,
-      "detail": -4.691525815019749
+      "detail": 0.9530463863150842
     },
     {
       "check": "Metric Approach 2 Mean_Error",
       "passed": true,
-      "detail": -45.02257906032778
+      "detail": -2.3688905493093357
     },
     {
       "check": "Finite route comparison without assuming an improvement",
       "passed": true,
       "detail": {
         "Approach 1": 4.320338550807385,
-        "Week 4 BSM baseline": 4.870567432473994,
-        "Approach 2": 49.9890896041052
+        "Approach 2": 4.540413263931448,
+        "Week 4 BSM baseline": 4.870567432473994
       }
     },
     {
@@ -1341,6 +1364,37 @@
       }
     },
     {
+      "check": "Loaded direct model class",
+      "passed": true,
+      "detail": "BoundedChooserRegressor"
+    },
+    {
+      "check": "Pickle runtime parity best_volatility_model",
+      "passed": true,
+      "detail": {
+        "rows": 252,
+        "max_absolute_difference": 1.942890293094024e-16
+      }
+    },
+    {
+      "check": "Loaded model reproduces saved prices best_volatility_model",
+      "passed": true,
+      "detail": 4.618527782440651e-14
+    },
+    {
+      "check": "Pickle runtime parity best_direct_pricing_model",
+      "passed": true,
+      "detail": {
+        "rows": 252,
+        "max_absolute_difference": 0.0
+      }
+    },
+    {
+      "check": "Loaded model reproduces saved prices best_direct_pricing_model",
+      "passed": true,
+      "detail": 1.4210854715202004e-14
+    },
+    {
       "check": "App finite BSM",
       "passed": true,
       "detail": 82.5747718734063
@@ -1364,9 +1418,15 @@
       ]
     },
     {
-      "check": "App exposes direct benchmark",
+      "check": "App exposes bounded positive direct benchmark",
       "passed": true,
-      "detail": 0.0
+      "detail": {
+        "price": 82.51359879583286,
+        "bounds": [
+          82.42775297604456,
+          369.08363374763087
+        ]
+      }
     },
     {
       "check": "App flags spot OOD",

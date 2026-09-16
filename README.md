@@ -9,7 +9,7 @@ This repository contains a continuous eight-week quantitative research project f
 3. **Week 3 — Original BSM replication:** vanilla BSM functions and the simple chooser closed-form model using the paper-matched contract configuration (`K = $150`, `T1 = 0.5`, `T2 = 1.0`).
 4. **Week 4 — Baseline evaluation:** chronological chooser-price proxy evaluation, volatility-regime analysis, parameter sensitivity, runtime/memory benchmarks, and a separate listed-JPM vanilla-option market sanity check.
 5. **Week 5 — ML design:** two purge-aware routes: forecast forward volatility before BSM, and predict the chooser proxy price directly from observable market features.
-6. **Week 6 — Training and comparison:** 20-day-gap expanding-window cross-validation, separate validation-based model selection, one-time chronological test evaluation, and interpretation of the exact selected models.
+6. **Week 6 — Training and comparison:** 20-day-gap expanding-window cross-validation, separate validation-based model selection, chronological test evaluation, and interpretation of the selected models. The later direct-model repair is explicitly evaluated retrospectively on the reused historical test set.
 7. **Week 7 — Advanced analysis:** required volatility/rate stress scenarios and public-data updating with explicit fallback status.
 8. **Week 8 — Integration:** a self-contained Streamlit application showing BSM and ML prices together, unit-labelled Greeks, sensitivities, performance evidence, and a purge-aware out-of-fold proxy-error band.
 
@@ -35,7 +35,7 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-The packaged app contains the trained models, cached data, configuration, and supporting modules required for local execution. Its submitted fallback snapshot uses the final Week 2 observation so the artefacts remain reproducible without a network connection; the app can refresh public market inputs when online. The project brief requires a deployable tool in a GitHub repository with a README, not a publicly hosted application. The remaining demo can be recorded from the locally running app; follow the checklists in `Week 8`.
+The packaged app contains the trained models, cached data, configuration, and supporting modules required for local execution. Its submitted fallback snapshot uses the final Week 2 observation so the artefacts remain reproducible without a network connection; the app can refresh public market inputs when online. The project brief requires a deployable tool in a GitHub repository with a README, not a publicly hosted application. The narrated demonstration has been recorded for separate delivery to the supervisor; it is not stored in this repository.
 
 ## Automated validation
 
